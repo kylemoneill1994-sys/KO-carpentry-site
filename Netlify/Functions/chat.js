@@ -5,7 +5,7 @@ exports.handler = async function(event) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY
+      'Authorization': 'Bearer ' + process.env.openai_api_key
     },
     body: JSON.stringify({
       model: 'gpt-4o-mini',
