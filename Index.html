@@ -1129,16 +1129,28 @@ Keep responses under 80 words. Always suggest calling or texting (816) 547-3207 
 
   let history = [], isOpen = false, greeted = false;
 
+  function openChat() {
+    isOpen = true;
+    chatWindow.classList.add('open');
+    notif.style.display = 'none';
+    if (!greeted) {
+      greeted = true;
+      setTimeout(() => addBotMessage("Hi there! 👋 I'm the KO Carpentry assistant. I can answer questions about our windows, doors, pricing, and more. What can I help you with today?"), 400);
+    }
+    setTimeout(() => inputEl.focus(), 300);
+  }
+
+  // Auto-open after 15 seconds
+  window.addEventListener('load', () => {
+    setTimeout(() => { if (!isOpen) openChat(); }, 15000);
+  });
+
   toggleBtn.addEventListener('click', () => {
-    isOpen = !isOpen;
-    chatWindow.classList.toggle('open', isOpen);
     if (isOpen) {
-      notif.style.display = 'none';
-      if (!greeted) {
-        greeted = true;
-        setTimeout(() => addBotMessage("Hi there! 👋 I'm the KO Carpentry assistant. I can answer questions about our windows, doors, pricing, and more. What can I help you with today?"), 400);
-      }
-      setTimeout(() => inputEl.focus(), 300);
+      isOpen = false;
+      chatWindow.classList.remove('open');
+    } else {
+      openChat();
     }
   });
 
@@ -1194,6 +1206,14 @@ Keep responses under 80 words. Always suggest calling or texting (816) 547-3207 
     addUserMessage(text);
     history.push({ role: 'user', content: text });
     showTyping();
+
+    // Google Analytics event tracking
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'chat_message_sent', {
+        'event_category': 'Chat',
+        'event_label': text.substring(0, 100)
+      });
+    }
 
     try {
       const response = await fetch('/.netlify/functions/chat', {
