@@ -1141,7 +1141,9 @@ Keep responses under 80 words. Always suggest calling or texting (816) 547-3207 
   }
 
   // Auto-open after 15 seconds
-  setTimeout(() => { if (!isOpen) openChat(); }, 15000);
+  window.addEventListener('load', () => {
+    setTimeout(() => { if (!isOpen) openChat(); }, 15000);
+  });
 
   toggleBtn.addEventListener('click', () => {
     if (isOpen) {
