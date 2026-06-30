@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kocarpentry-kc.com/sitemap.xml
