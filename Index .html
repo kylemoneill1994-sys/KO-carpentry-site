@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KO Carpentry LLC | Window & Door Replacement | Kansas City</title>
+<meta name="description" content="Expert window and door replacement in Kansas City. Licensed & insured. Free quotes. Alliance Hawthorne windows, ProVia doors. Financing available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1S1HYBWFG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V1S1HYBWFG');
+</script>
+
+<style>
+:root {
+  --olive: #4a5e3a;
+  --olive-dark: #3a4e2e;
+  --olive-light: #5a7048;
+  --charcoal: #1e1e1e;
+  --charcoal-mid: #2a2a2a;
+  --charcoal-light: #333;
+  --cream: #f5f0e8;
+  --cream-dark: #ede8de;
+  --orange: #e07b39;
+  --orange-dark: #c96a28;
+  --text-dark: #1a1a1a;
+  --text-mid: #444;
+  --text-light: #777;
+  --white: #ffffff;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(30,30,30,0.97);
+  backdrop-filter: blur(8px);
+  z-index: 900;
+  padding: 0 24px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 2px solid var(--olive);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--orange) !important;
+  color: var(--white) !important;
+  padding: 8px 18px;
+  border-radius: 4px;
+}
+.nav-cta:hover { background: var(--orange-dark) !important; }
+.nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+@media(max-width:768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--charcoal);
+  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(74,94,58,0.15) 0%, transparent 50%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(74,94,58,0.03) 40px,
+      rgba(74,94,58,0.03) 80px
+    );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1100px; margin: 0 auto;
+  padding: 80px 32px;
+}
+.hero-eyebrow {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 10vw, 110px);
+  line-height: 0.92;
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--olive-light);
+  display: block;
+}
+.hero-sub {
+  font-family: 'Lora', serif;
+  font-size: clamp(16px, 2.2vw, 20px);
+  color: #aaa;
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 40px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: border-color 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-1px); }
+.hero-stats {
+  display: flex; gap: 48px; flex-wrap: wrap;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: var(--white);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--olive);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 28s linear infinite;
+}
+.ticker-inner span {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  padding: 0 32px;
+}
+.ticker-inner span::before { content: '◆ '; color: rgba(255,255,255,0.4); }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── SECTIONS ── */
+section { padding: 96px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 60px);
+  letter-spacing: 1px;
+  color: var(--charcoal);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.section-title.light { color: var(--white); }
+.section-sub {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  color: var(--text-mid);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 56px;
+}
+.section-sub.light { color: #aaa; }
+
+/* ── FINANCING BANNER ── */
+.financing-banner {
+  background: var(--charcoal);
+  padding: 20px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  border-left: 4px solid var(--orange);
+}
+.financing-banner p {
+  color: var(--cream);
+  font-size: 15px;
+  font-weight: 400;
+}
+.financing-banner strong { color: var(--white); }
+.financing-banner a {
+  background: var(--orange);
+  color: var(--white);
+  padding: 10px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.financing-banner a:hover { background: var(--orange-dark); }
+
+/* ── CALCULATOR ── */
+.calc-section { background: var(--charcoal); }
+.calc-box {
+  background: #252525;
+  border: 1px solid #383838;
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 620px;
+}
+.calc-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #333;
+}
+.calc-row:last-of-type { border-bottom: none; }
+.calc-label { font-size: 15px; color: #ccc; font-weight: 600; }
+.calc-price { font-size: 13px; color: #666; margin-top: 2px; }
+.calc-counter {
+  display: flex; align-items: center; gap: 16px;
+}
+.calc-counter button {
+  width: 36px; height: 36px;
+  background: #333; border: none; border-radius: 4px;
+  color: #fff; font-size: 20px; cursor: pointer;
+  transition: background 0.15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.calc-counter button:hover { background: var(--olive); }
+.calc-counter span { font-size: 20px; font-weight: 600; color: #fff; min-width: 24px; text-align: center; }
+.upgrades-title {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: #666;
+  margin: 28px 0 16px;
+}
+.upgrade-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #2e2e2e;
+  cursor: pointer;
+}
+.upgrade-item:last-of-type { border-bottom: none; }
+.upgrade-item input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--olive); cursor: pointer; }
+.upgrade-item label { color: #bbb; font-size: 14px; cursor: pointer; flex: 1; }
+.upgrade-item .upgrade-price { color: var(--orange); font-size: 13px; font-weight: 600; }
+.calc-total-area {
+  background: var(--olive-dark);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-top: 28px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+}
+.calc-total-label { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.calc-total-num { font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: #fff; letter-spacing: 1px; }
+.calc-disclaimer { color: #555; font-size: 12px; margin-top: 12px; font-style: italic; }
+.calc-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.calc-actions a {
+  padding: 12px 20px; border-radius: 4px;
+  text-decoration: none; font-weight: 600; font-size: 14px;
+  transition: 0.2s; display: inline-block;
+}
+.calc-btn-orange { background: var(--orange); color: #fff; }
+.calc-btn-orange:hover { background: var(--orange-dark); }
+.calc-btn-outline { border: 2px solid #444; color: #ccc; }
+.calc-btn-outline:hover { border-color: #777; color: #fff; }
+
+/* ── SERVICES ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: #ddd;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.service-card {
+  background: var(--white);
+  padding: 36px 32px;
+  transition: background 0.2s;
+}
+.service-card:hover { background: var(--cream-dark); }
+.service-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  color: rgba(74,94,58,0.12);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.service-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.service-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+.service-desc { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+/* ── PRODUCTS ── */
+.products-section { background: var(--charcoal); }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.product-card {
+  background: #252525;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 32px 28px;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.product-card:hover { border-color: var(--olive); transform: translateY(-2px); }
+.product-brand {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 6px;
+}
+.product-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px; letter-spacing: 0.5px;
+  color: var(--white); margin-bottom: 12px;
+}
+.product-desc { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 20px; }
+.product-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.product-links a {
+  font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--olive-light);
+  text-decoration: none; border-bottom: 1px solid var(--olive-light);
+  transition: color 0.2s;
+}
+.product-links a:hover { color: var(--white); border-color: var(--white); }
+
+/* ── TRUST ── */
+.trust-section { background: var(--olive-dark); }
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+.trust-item { display: flex; gap: 16px; align-items: flex-start; }
+.trust-check {
+  width: 32px; height: 32px; flex-shrink: 0;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 16px;
+}
+.trust-item h3 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.trust-item p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* ── PROCESS ── */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  position: relative;
+}
+.process-step {
+  padding: 32px 28px;
+  position: relative;
+}
+.process-step::after {
+  content: '→';
+  position: absolute; right: -12px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px; color: #ddd;
+  z-index: 1;
+}
+.process-step:last-child::after { display: none; }
+.step-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px; color: var(--olive);
+  opacity: 0.25; line-height: 1;
+  margin-bottom: 8px;
+}
+.step-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--charcoal); margin-bottom: 8px; letter-spacing: 0.5px; }
+.step-desc { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+/* ── REVIEWS ── */
+.reviews-section { background: var(--charcoal); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.review-card {
+  background: #252525;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 32px 28px;
+}
+.review-stars { color: #f5a623; font-size: 18px; letter-spacing: 2px; margin-bottom: 16px; }
+.review-text {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.review-author { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--olive-light); }
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: var(--olive);
+  text-align: center;
+  padding: 80px 24px;
+}
+.cta-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 60px);
+  color: #fff; letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.cta-section p { color: rgba(255,255,255,0.8); font-size: 17px; margin-bottom: 36px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cta-btns a {
+  padding: 16px 32px; border-radius: 4px;
+  text-decoration: none; font-weight: 600; font-size: 15px;
+  transition: 0.2s; display: inline-block;
+}
+.cta-btn-white { background: #fff; color: var(--olive-dark); }
+.cta-btn-white:hover { background: var(--cream); }
+.cta-btn-ghost { border: 2px solid rgba(255,255,255,0.4); color: #fff; }
+.cta-btn-ghost:hover { border-color: #fff; }
+
+/* ── FOOTER ── */
+footer {
+  background: #141414;
+  padding: 64px 24px 32px;
+  border-top: 2px solid var(--olive);
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+@media(max-width:768px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 2px;
+  color: var(--white); margin-bottom: 12px;
+}
+.footer-logo span { color: var(--orange); }
+.footer-tagline { font-size: 13px; color: #666; line-height: 1.6; max-width: 260px; }
+.footer-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+.footer-contact a { color: #888; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+.footer-contact a:hover { color: var(--white); }
+.footer-col h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: #555;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a { color: #777; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--white); }
+.footer-col p { color: #666; font-size: 13px; line-height: 1.7; }
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 24px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+  gap: 12px;
+}
+.footer-bottom p { color: #444; font-size: 12px; }
+.footer-review-link {
+  display: flex; align-items: center; gap: 8px;
+  color: #555; font-size: 12px; text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-review-link:hover { color: var(--orange); }
+
+/* ── CHAT WIDGET ── */
+#ko-chat-btn {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 60px; height: 60px;
+  background: var(--olive);
+  border-radius: 50%; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9998;
+  transition: transform 0.2s, background 0.2s;
+}
+#ko-chat-btn:hover { transform: scale(1.08); background: var(--olive-light); }
+#ko-chat-btn svg { width: 28px; height: 28px; fill: #fff; }
+#ko-chat-btn .ko-notif {
+  position: absolute; top: 2px; right: 2px;
+  width: 14px; height: 14px;
+  background: var(--orange); border-radius: 50%;
+  border: 2px solid var(--charcoal);
+  animation: ko-pulse 2s infinite;
+}
+@keyframes ko-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+
+#ko-chat-window {
+  position: fixed; bottom: 96px; right: 24px;
+  width: 360px; max-width: calc(100vw - 32px);
+  height: 520px; max-height: calc(100vh - 120px);
+  background: #1c1c1c;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  display: none; flex-direction: column;
+  overflow: hidden; z-index: 9997;
+  font-family: 'Source Sans 3', sans-serif;
+  border: 1px solid #333;
+}
+#ko-chat-window.open { display: flex; animation: ko-slidein 0.25s ease; }
+@keyframes ko-slidein { from{opacity:0;transform:translateY(16px) scale(0.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+#ko-chat-header {
+  background: var(--olive);
+  padding: 14px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+#ko-chat-header .ko-header-left { display: flex; align-items: center; gap: 10px; }
+#ko-chat-header .ko-avatar {
+  width: 38px; height: 38px;
+  background: var(--olive-dark); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+#ko-chat-header .ko-title { color: #fff; font-size: 15px; font-weight: 700; line-height: 1.2; }
+#ko-chat-header .ko-subtitle { color: rgba(255,255,255,0.65); font-size: 11px; }
+#ko-close-btn {
+  background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,0.65); font-size: 20px;
+  padding: 4px; border-radius: 4px; transition: color 0.15s;
+}
+#ko-close-btn:hover { color: #fff; }
+
+#ko-chat-messages {
+  flex: 1; overflow-y: auto;
+  padding: 16px 14px;
+  display: flex; flex-direction: column; gap: 10px;
+  scroll-behavior: smooth;
+}
+#ko-chat-messages::-webkit-scrollbar { width: 4px; }
+#ko-chat-messages::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+
+.ko-msg {
+  max-width: 88%; padding: 10px 13px;
+  border-radius: 12px; font-size: 14px; line-height: 1.5;
+  animation: ko-msgin 0.2s ease;
+}
+@keyframes ko-msgin { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+.ko-msg.bot {
+  background: #2a2a2a; color: #e8e8e8;
+  border-bottom-left-radius: 4px; align-self: flex-start;
+  border: 1px solid #383838;
+}
+.ko-msg.user {
+  background: var(--olive); color: #fff;
+  border-bottom-right-radius: 4px; align-self: flex-end;
+}
+.ko-msg a { color: var(--orange); }
+
+.ko-typing {
+  display: flex; gap: 5px; align-items: center;
+  padding: 12px 14px; background: #2a2a2a;
+  border-radius: 12px; border-bottom-left-radius: 4px;
+  align-self: flex-start; border: 1px solid #383838;
+}
+.ko-typing span {
+  width: 7px; height: 7px; background: #888;
+  border-radius: 50%; animation: ko-bounce 1.2s infinite;
+}
+.ko-typing span:nth-child(2) { animation-delay: 0.2s; }
+.ko-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes ko-bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px);background:var(--olive)} }
+
+#ko-chat-footer {
+  padding: 12px 14px; border-top: 1px solid #2e2e2e;
+  display: flex; gap: 8px; flex-shrink: 0; background: #1c1c1c;
+}
+#ko-chat-input {
+  flex: 1; background: #2a2a2a; border: 1px solid #3a3a3a;
+  border-radius: 8px; color: #e8e8e8;
+  padding: 10px 12px; font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  resize: none; outline: none; transition: border-color 0.2s;
+  max-height: 80px;
+}
+#ko-chat-input::placeholder { color: #666; }
+#ko-chat-input:focus { border-color: var(--olive); }
+#ko-send-btn {
+  background: var(--olive); border: none; border-radius: 8px;
+  color: #fff; width: 40px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s; flex-shrink: 0;
+}
+#ko-send-btn:hover { background: var(--olive-light); }
+#ko-send-btn:disabled { background: #333; cursor: default; }
+#ko-send-btn svg { width: 18px; height: 18px; fill: #fff; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KO <span>Carpentry</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#products">Products</a>
+    <a href="#process">Process</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:+18165473207" class="nav-cta">📞 Call Now</a>
+  </div>
+  <div class="nav-hamburger" onclick="this.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Window & Door Specialists — Kansas City</div>
+    <h1>Built to Last,<em>Made to Impress.</em></h1>
+    <p class="hero-sub">Expert window and door replacement that transforms your home — sealed, secure, and stunning.</p>
+    <div class="hero-btns">
+      <a href="#calculator" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:+18165473207" class="btn-secondary">📞 (816) 547-3207</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Installs Completed</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5★</div>
+        <div class="hero-stat-label">Average Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Window Replacement</span><span>Door Installation</span><span>Energy-Efficient Glass</span><span>Storm Doors</span><span>Patio Doors</span><span>Entry Doors</span><span>Custom Frames</span><span>Weather Sealing</span><span>Kansas City & Surrounding Areas</span><span>Licensed & Insured</span><span>Free Estimates</span><span>Financing Available</span>
+    <span>Window Replacement</span><span>Door Installation</span><span>Energy-Efficient Glass</span><span>Storm Doors</span><span>Patio Doors</span><span>Entry Doors</span><span>Custom Frames</span><span>Weather Sealing</span><span>Kansas City & Surrounding Areas</span><span>Licensed & Insured</span><span>Free Estimates</span><span>Financing Available</span>
+  </div>
+</div>
+
+<!-- FINANCING BANNER -->
+<div style="background:var(--charcoal); padding: 0 24px;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="financing-banner">
+      <p>💳 <strong>Financing Available Through Acorn Finance</strong> — Get pre-qualified in seconds with no impact to your credit score.</p>
+      <a href="https://www.acornfinance.com" target="_blank" rel="noopener">Check My Rate →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="calculator">
+  <div class="section-inner">
+    <div class="section-label">Instant Estimate</div>
+    <h2 class="section-title light">Get an Instant Quote</h2>
+    <p class="section-sub light">Build your estimate in seconds. All final quotes are confirmed on-site and include labour, materials, and cleanup.</p>
+    <div class="calc-box">
+      <div class="calc-row">
+        <div>
+          <div class="calc-label">🪟 Window Replacement</div>
+          <div class="calc-price">$900 each (installed)</div>
+        </div>
+        <div class="calc-counter">
+          <button onclick="adjust('windows',-1)">−</button>
+          <span id="windows-count">1</span>
+          <button onclick="adjust('windows',1)">+</button>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div>
+          <div class="calc-label">🚪 Sliding / Patio Door</div>
+          <div class="calc-price">$2,500 each (installed)</div>
+        </div>
+        <div class="calc-counter">
+          <button onclick="adjust('doors',-1)">−</button>
+          <span id="doors-count">0</span>
+          <button onclick="adjust('doors',1)">+</button>
+        </div>
+      </div>
+      <div class="upgrades-title">Optional Upgrades</div>
+      <div class="upgrade-item" onclick="toggleUpgrade('lowe', 150)">
+        <input type="checkbox" id="lowe">
+        <label for="lowe">Low-E / Triple Pane Glass <span style="color:#666;">+$150 per window</span></label>
+      </div>
+      <div class="upgrade-item" onclick="toggleUpgrade('frame', 200)">
+        <input type="checkbox" id="frame">
+        <label for="frame">Custom Frame Colour <span style="color:#666;">+$200 per unit</span></label>
+      </div>
+      <div class="calc-total-area">
+        <div>
+          <div class="calc-total-label">Estimated Total</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;">incl. labour & cleanup</div>
+        </div>
+        <div class="calc-total-num" id="calc-total">$900</div>
+      </div>
+      <p class="calc-disclaimer">* Estimate only. Final price confirmed after on-site assessment.</p>
+      <div class="calc-actions">
+        <a href="https://www.acornfinance.com" target="_blank" rel="noopener" class="calc-btn-orange calc-actions a">💳 Apply for Financing</a>
+        <a href="#" id="sms-btn" class="calc-btn-outline calc-actions a">💬 Text Us Your Quote</a>
+        <a href="tel:+18165473207" class="calc-btn-outline calc-actions a">📞 Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">From a single window to a whole-home transformation, KO Carpentry delivers with precision and care.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <span class="service-icon">🪟</span>
+        <div class="service-title">Window Replacement</div>
+        <p class="service-desc">Single-hung, double-hung, casement, bay, and picture windows. We remove the old and install the new with a clean, airtight finish that lasts decades.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <span class="service-icon">🚪</span>
+        <div class="service-title">Entry Door Installation</div>
+        <p class="service-desc">Steel, fiberglass, and wood entry doors installed plumb and level every time. We handle the framing, weatherstripping, hardware, and finishing trim.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <span class="service-icon">🌿</span>
+        <div class="service-title">Patio & Sliding Doors</div>
+        <p class="service-desc">Smooth-gliding, properly sealed patio doors that bring light in and keep drafts out. French doors and sliding systems available in a range of styles.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <span class="service-icon">🌡️</span>
+        <div class="service-title">Energy-Efficient Upgrades</div>
+        <p class="service-desc">Triple-pane glass, low-E coatings, and argon-filled units that cut your heating and cooling bills — and qualify for energy tax credits.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <span class="service-icon">⛈️</span>
+        <div class="service-title">Storm Doors & Windows</div>
+        <p class="service-desc">Add an extra layer of protection against harsh weather. Storm doors and windows installed over your existing units for year-round durability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="section-inner">
+    <div class="section-label">What We Install</div>
+    <h2 class="section-title light">Our Products</h2>
+    <p class="section-sub light">We install only trusted, high-quality brands — built for Kansas City weather and backed by strong warranties.</p>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-brand">ProVia</div>
+        <div class="product-name">Entry Doors</div>
+        <p class="product-desc">Fiberglass and steel entry doors available in hundreds of styles, finishes, and glass options. ENERGY STAR certified with lifetime warranty.</p>
+        <div class="product-links">
+          <a href="https://www.provia.com/doors/entry-doors/" target="_blank" rel="noopener">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-brand">ProVia</div>
+        <div class="product-name">Patio Doors</div>
+        <p class="product-desc">Smooth-gliding patio doors with superior weatherstripping, multi-point locking, and optional blinds between the glass.</p>
+        <div class="product-links">
+          <a href="https://www.provia.com/doors/patio-doors/" target="_blank" rel="noopener">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-brand">Alliance / Midway</div>
+        <div class="product-name">Hawthorne Windows</div>
+        <p class="product-desc">Premium vinyl replacement windows with Low-E insulated glass, 45 color combinations, and a lifetime glass breakage warranty.</p>
+        <div class="product-links">
+          <a href="https://www.alliancewindow.com" target="_blank" rel="noopener">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-brand">Alliance / Midway</div>
+        <div class="product-name">Hawthorne Patio Doors</div>
+        <p class="product-desc">High-performance patio doors in two-lite and three-lite configurations with side lite and transom options. Available in dozens of color combinations.</p>
+        <div class="product-links">
+          <a href="https://www.alliancewindow.com" target="_blank" rel="noopener">View Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="section-inner">
+    <div class="section-label" style="color:rgba(255,255,255,0.5);">Why KO Carpentry</div>
+    <h2 class="section-title light" style="margin-bottom:48px;">The KO Difference</h2>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>Licensed & Fully Insured</h3>
+          <p>Your home is protected at every step. We carry full liability insurance and all required trade licenses.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>Transparent, Flat-Rate Pricing</h3>
+          <p>We quote the job up front — no surprise add-ons, no hidden labour charges. What we quote is what you pay.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>Same-Week Availability</h3>
+          <p>We respect your schedule. Most jobs are booked and completed within the same week with minimal disruption.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div>
+          <h3>Lifetime Workmanship Warranty</h3>
+          <p>Our work is backed by a lifetime craftsmanship guarantee — not just the manufacturer's warranty.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple Process</h2>
+    <p class="section-sub">Four easy steps from first contact to finished installation.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Free Consultation</div>
+        <p class="step-desc">We come to you, assess your windows and doors, and discuss your goals — no obligation, no pressure.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">Custom Quote</div>
+        <p class="step-desc">You receive a detailed written quote covering materials, labour, and timeline — all in plain language.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Professional Install</div>
+        <p class="step-desc">Our crew arrives on time, protects your home, and completes the installation to exacting standards.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-title">Final Walk-Through</div>
+        <p class="step-desc">We review every detail with you before we leave. No surprises, no mess — just a beautiful finished result.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--orange);">Client Reviews</div>
+    <h2 class="section-title light">What People Say</h2>
+    <p class="section-sub light">Over 500 happy homeowners — and counting.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"KO Carpentry replaced all twelve windows in our colonial. The crew was professional, fast, and left the place spotless. Our heating bill dropped noticeably the very next month."</p>
+        <div class="review-author">Margaret & Tom H. — Homeowners, 2024</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I got three quotes and KO was the most honest — no upselling, no nonsense. The front door they installed is beautiful and fits perfectly. I'll use them again without hesitation."</p>
+        <div class="review-author">David R. — Homeowner, 2024</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The sliding patio door they installed glides like silk. They finished in half a day and caulked everything immaculately. KO Carpentry genuinely takes pride in their work."</p>
+        <div class="review-author">Sandra K. — Homeowner, 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub">Everything you need to know before getting started.</p>
+    <div style="display:flex; flex-direction:column; gap:14px; max-width:800px;">
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">How much does window replacement cost in Kansas City?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Window replacement with KO Carpentry typically starts around $900 per window, installed. The final price depends on window size, style, and any upgrades like triple-pane glass or custom frame colors. We provide a free, no-obligation in-home estimate so you know the exact cost before committing.</p>
+      </details>
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">How much does a new entry or patio door cost?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Doors typically start around $2,500 installed, depending on the door style, material, and any glass or hardware upgrades. We install ProVia entry and patio doors and Alliance Hawthorne patio doors, both backed by strong manufacturer warranties.</p>
+      </details>
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">How long does installation take?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Window replacement typically takes 2–4 weeks from order to install, while doors usually take 3–6 weeks depending on customization options chosen. Most installation appointments themselves are completed in a single day.</p>
+      </details>
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">Do you offer financing?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Yes! We offer financing through Acorn Finance. You can get pre-qualified online in seconds with no impact to your credit score, and choose a monthly payment plan that fits your budget.</p>
+      </details>
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">What areas do you serve?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">KO Carpentry proudly serves Kansas City and the entire surrounding metro area, including Overland Park, Lee's Summit, Blue Springs, Independence, Olathe, and all nearby suburbs on both the Missouri and Kansas sides.</p>
+      </details>
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">Are you licensed and insured?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Yes, KO Carpentry LLC is fully licensed (Lic. # KO-2024-9821) and carries full liability insurance, so your home is protected throughout the entire installation process.</p>
+      </details>
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">Why are your prices lower than the big window companies?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">As a solo operator with 15+ years of experience — including past work for two of the major window and door companies in Kansas City — KO Carpentry has significantly lower overhead than large companies. That savings is passed directly to you without sacrificing quality, craftsmanship, or warranty coverage.</p>
+      </details>
+
+      <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
+        <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">Do you offer a warranty?</summary>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Yes, every installation is backed by a lifetime workmanship warranty from KO Carpentry, in addition to the manufacturer warranties on the windows and doors themselves.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Get Started?</h2>
+  <p>Request your free, no-obligation quote today.</p>
+  <div class="cta-btns">
+    <a href="tel:+18165473207" class="cta-btn-white">📞 Call Us Now</a>
+    <a href="sms:+18165473207" class="cta-btn-ghost">💬 Text Us Now</a>
+    <a href="mailto:Kyle.m.oneill1994@gmail.com" class="cta-btn-ghost">✉ Email Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">KO <span>Carpentry</span></div>
+        <p class="footer-tagline">Window and door replacement done right — by craftsmen who care about the details.</p>
+        <div class="footer-contact">
+          <a href="tel:+18165473207">📞 (816) 547-3207</a>
+          <a href="mailto:Kyle.m.oneill1994@gmail.com">✉ Kyle.m.oneill1994@gmail.com</a>
+          <a>📍 Serving the Greater KC Metro Area</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Window Replacement</a></li>
+          <li><a href="#services">Entry Doors</a></li>
+          <li><a href="#services">Patio Doors</a></li>
+          <li><a href="#services">Storm Doors</a></li>
+          <li><a href="#services">Energy Upgrades</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#calculator">Free Quote</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#products">Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Mon–Fri: 7am – 6pm<br>Saturday: 8am – 4pm<br>Sunday: Closed</p>
+        <p style="margin-top:16px;color:#555;">Licensed & Insured<br>Lic. # KO-2024-9821</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 KO Carpentry LLC. All rights reserved. Crafted with pride.</p>
+      <a href="https://g.page/r/review" target="_blank" rel="noopener" class="footer-review-link">⭐ Leave us a Google Review</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════
+     AI CHAT WIDGET (powered by OpenAI)
+     ═══════════════════════════════════════ -->
+<button id="ko-chat-btn" aria-label="Open chat">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  <div class="ko-notif"></div>
+</button>
+
+<div id="ko-chat-window" role="dialog" aria-label="KO Carpentry Chat">
+  <div id="ko-chat-header">
+    <div class="ko-header-left">
+      <div class="ko-avatar">🪟</div>
+      <div>
+        <div class="ko-title">KO Carpentry</div>
+        <div class="ko-subtitle">● Ask us anything</div>
+      </div>
+    </div>
+    <button id="ko-close-btn" aria-label="Close chat">✕</button>
+  </div>
+  <div id="ko-chat-messages"></div>
+  <div id="ko-chat-footer">
+    <textarea id="ko-chat-input" placeholder="Ask a question..." rows="1"></textarea>
+    <button id="ko-send-btn" aria-label="Send">
+      <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+// ── CALCULATOR ──
+const WINDOW_PRICE = 900, DOOR_PRICE = 2500;
+let counts = { windows: 1, doors: 0 };
+let upgrades = { lowe: 0, frame: 0 };
+
+function adjust(type, delta) {
+  counts[type] = Math.max(0, counts[type] + delta);
+  if (type === 'windows' && counts[type] === 0 && counts.doors === 0) counts[type] = 1;
+  document.getElementById(type + '-count').textContent = counts[type];
+  recalc();
+}
+
+function toggleUpgrade(id, perUnit) {
+  const cb = document.getElementById(id);
+  upgrades[id] = cb.checked ? perUnit : 0;
+  recalc();
+}
+
+function recalc() {
+  const base = counts.windows * WINDOW_PRICE + counts.doors * DOOR_PRICE;
+  const loweAdd = upgrades.lowe * counts.windows;
+  const frameAdd = upgrades.frame * (counts.windows + counts.doors);
+  const total = base + loweAdd + frameAdd;
+  document.getElementById('calc-total').textContent = '$' + total.toLocaleString();
+  const msg = `Hi! I used your quote calculator and got an estimate of $${total.toLocaleString()} (${counts.windows} window(s), ${counts.doors} door(s)). Can you confirm and schedule a free on-site quote?`;
+  document.getElementById('sms-btn').href = 'sms:+18165473207?body=' + encodeURIComponent(msg);
+}
+
+recalc();
+
+// ── CHAT WIDGET ──
+(function() {
+  const SYSTEM_PROMPT = `You are a helpful assistant for KO Carpentry LLC, a window and door replacement company based in Kansas City. Be friendly, concise, and helpful. Always encourage the customer to call or text for a free quote.
+
+Key business info:
+- Business: KO Carpentry LLC
+- Services: Window replacement and door replacement
+- Location: Kansas City and ALL surrounding areas
+- Phone: (816) 547-3207 — customers can call OR text
+
+Pricing:
+- Windows start around $900 (installed)
+- Doors start around $2,500 (installed)
+- Final price depends on size, style, and customizations
+
+Brands:
+- Alliance Hawthorne: windows and patio doors
+- ProVia: entry doors and patio doors
+
+Timeline:
+- Windows: roughly 2–4 weeks from order to install
+- Doors: roughly 3–6 weeks from order to install
+- Timeline varies based on customization options chosen
+
+Financing:
+- We offer financing through Acorn Finance
+- Customers can apply online with no impact to credit score
+
+Common questions:
+- Are you licensed/insured? Yes, licensed and fully insured.
+- Free estimates? Yes! Call or text (816) 547-3207.
+- Service area? Kansas City and all surrounding areas.
+
+Keep responses under 80 words. Always suggest calling or texting (816) 547-3207 for a free quote when relevant. Do not make up information not listed above.`;
+
+  const messagesEl = document.getElementById('ko-chat-messages');
+  const inputEl = document.getElementById('ko-chat-input');
+  const sendBtn = document.getElementById('ko-send-btn');
+  const chatWindow = document.getElementById('ko-chat-window');
+  const toggleBtn = document.getElementById('ko-chat-btn');
+  const closeBtn = document.getElementById('ko-close-btn');
+  const notif = toggleBtn.querySelector('.ko-notif');
+
+  let history = [], isOpen = false, greeted = false;
+
+  function openChat() {
+    isOpen = true;
+    chatWindow.classList.add('open');
+    notif.style.display = 'none';
+    if (!greeted) {
+      greeted = true;
+      setTimeout(() => addBotMessage("Hi there! 👋 I'm the KO Carpentry assistant. I can answer questions about our windows, doors, pricing, and more. What can I help you with today?"), 400);
+    }
+    setTimeout(() => inputEl.focus(), 300);
+  }
+
+  // Auto-open after 15 seconds
+  window.addEventListener('load', () => {
+    setTimeout(() => { if (!isOpen) openChat(); }, 15000);
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    if (isOpen) {
+      isOpen = false;
+      chatWindow.classList.remove('open');
+    } else {
+      openChat();
+    }
+  });
+
+  closeBtn.addEventListener('click', () => { isOpen = false; chatWindow.classList.remove('open'); });
+
+  inputEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+  inputEl.addEventListener('input', () => {
+    inputEl.style.height = 'auto';
+    inputEl.style.height = Math.min(inputEl.scrollHeight, 80) + 'px';
+  });
+  sendBtn.addEventListener('click', sendMessage);
+
+  function addBotMessage(text) {
+    const div = document.createElement('div');
+    div.className = 'ko-msg bot';
+    div.innerHTML = text.replace(/\(816\) 547-3207/g, '<a href="tel:+18165473207">(816) 547-3207</a>');
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function addUserMessage(text) {
+    const div = document.createElement('div');
+    div.className = 'ko-msg user';
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'ko-typing';
+    div.id = 'ko-typing-indicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function removeTyping() {
+    const t = document.getElementById('ko-typing-indicator');
+    if (t) t.remove();
+  }
+
+  async function sendMessage() {
+    const text = inputEl.value.trim();
+    if (!text) return;
+
+    inputEl.value = '';
+    inputEl.style.height = 'auto';
+    sendBtn.disabled = true;
+
+    addUserMessage(text);
+    history.push({ role: 'user', content: text });
+    showTyping();
+
+    // Google Analytics event tracking
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'chat_message_sent', {
+        'event_category': 'Chat',
+        'event_label': text.substring(0, 100)
+      });
+    }
+
+    try {
+      const response = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...history]
+        })
+      });
+
+      const data = await response.json();
+      removeTyping();
+
+      const reply = data.choices?.[0]?.message?.content
+        || "Sorry, I had trouble responding. Please call or text us at (816) 547-3207!";
+
+      history.push({ role: 'assistant', content: reply });
+      addBotMessage(reply);
+    } catch(err) {
+      removeTyping();
+      addBotMessage("Something went wrong. Give us a call or text at (816) 547-3207 and we'll get you taken care of!");
+    }
+
+    sendBtn.disabled = false;
+    inputEl.focus();
+  }
+})();
+</script>
+
+</body>
+</html>
