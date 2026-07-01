@@ -876,11 +876,13 @@ footer {
         <div style="font-size:36px; margin-bottom:12px;">🪟</div>
         <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; letter-spacing:1px; margin-bottom:8px;">See Your Instant Estimate</div>
         <div style="font-size:14px; color:#aaa; margin-bottom:28px; line-height:1.6;">Enter your info below and we'll show you a ballpark price instantly — no obligation, no spam.</div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <input id="gate-name" type="text" placeholder="Your Name" style="background:#2a2a2a; border:1px solid #3a3a3a; border-radius:8px; color:#e8e8e8; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
-          <input id="gate-phone" type="tel" placeholder="Phone Number" style="background:#2a2a2a; border:1px solid #3a3a3a; border-radius:8px; color:#e8e8e8; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
-          <button onclick="unlockCalculator()" style="background:var(--orange); border:none; border-radius:8px; color:#fff; padding:14px; font-size:16px; font-weight:700; cursor:pointer; margin-top:4px;">Show My Estimate →</button>
-        </div>
+        <form name="calculator-leads" netlify netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:12px;">
+          <input type="hidden" name="form-name" value="calculator-leads">
+          <input type="hidden" name="bot-field" style="display:none;">
+          <input id="gate-name" name="name" type="text" placeholder="Your Name" style="background:#2a2a2a; border:1px solid #3a3a3a; border-radius:8px; color:#e8e8e8; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
+          <input id="gate-phone" name="phone" type="tel" placeholder="Phone Number" style="background:#2a2a2a; border:1px solid #3a3a3a; border-radius:8px; color:#e8e8e8; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
+          <button type="button" onclick="unlockCalculator()" style="background:var(--orange); border:none; border-radius:8px; color:#fff; padding:14px; font-size:16px; font-weight:700; cursor:pointer; margin-top:4px;">Show My Estimate →</button>
+        </form>
         <p style="font-size:11px; color:#555; margin-top:14px;">We'll only use your info to follow up on your estimate. No spam, ever.</p>
       </div>
     </div>
@@ -1259,6 +1261,14 @@ function unlockCalculator() {
     alert('Please enter your name and phone number to see your estimate.');
     return;
   }
+
+  // Submit to Netlify Forms
+  const formData = new FormData();
+  formData.append('form-name', 'calculator-leads');
+  formData.append('name', name);
+  formData.append('phone', phone);
+  fetch('/', { method: 'POST', body: formData }).catch(err => console.log(err));
+
   // Track lead in Google Analytics
   if (typeof gtag !== 'undefined') {
     gtag('event', 'calculator_lead', {
@@ -1266,7 +1276,8 @@ function unlockCalculator() {
       'event_label': name
     });
   }
-  // Pre-fill SMS button with lead info
+
+  // Show calculator
   document.getElementById('lead-gate').style.display = 'none';
   document.getElementById('calc-box').style.display = 'block';
   recalc();
