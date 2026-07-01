@@ -869,7 +869,24 @@ footer {
     <div class="section-label">Instant Estimate</div>
     <h2 class="section-title light">Get an Instant Quote</h2>
     <p class="section-sub light">Build your estimate in seconds. All final quotes are confirmed on-site and include labour, materials, and cleanup.</p>
-    <div class="calc-box">
+
+    <!-- Lead Gate -->
+    <div class="calc-box" id="lead-gate">
+      <div style="text-align:center; padding: 12px 0 24px;">
+        <div style="font-size:36px; margin-bottom:12px;">🪟</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; letter-spacing:1px; margin-bottom:8px;">See Your Instant Estimate</div>
+        <div style="font-size:14px; color:#aaa; margin-bottom:28px; line-height:1.6;">Enter your info below and we'll show you a ballpark price instantly — no obligation, no spam.</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <input id="gate-name" type="text" placeholder="Your Name" style="background:#2a2a2a; border:1px solid #3a3a3a; border-radius:8px; color:#e8e8e8; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
+          <input id="gate-phone" type="tel" placeholder="Phone Number" style="background:#2a2a2a; border:1px solid #3a3a3a; border-radius:8px; color:#e8e8e8; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
+          <button onclick="unlockCalculator()" style="background:var(--orange); border:none; border-radius:8px; color:#fff; padding:14px; font-size:16px; font-weight:700; cursor:pointer; margin-top:4px;">Show My Estimate →</button>
+        </div>
+        <p style="font-size:11px; color:#555; margin-top:14px;">We'll only use your info to follow up on your estimate. No spam, ever.</p>
+      </div>
+    </div>
+
+    <!-- Calculator (hidden until gate is filled) -->
+    <div class="calc-box" id="calc-box" style="display:none;">
       <div class="calc-row">
         <div>
           <div class="calc-label">🪟 Window Replacement</div>
@@ -908,7 +925,7 @@ footer {
         </div>
         <div class="calc-total-num" id="calc-total">$900</div>
       </div>
-      <p class="calc-disclaimer">* Estimate only. Final price confirmed after on-site assessment.</p>
+      <p class="calc-disclaimer">* Ballpark estimate only. Your final price is determined after a free in-home consultation where we measure your openings and discuss style, color, and glass options. Schedule yours today — no obligation.</p>
       <div class="calc-actions">
         <a href="https://www.acornfinance.com" target="_blank" rel="noopener" class="calc-btn-orange calc-actions a">💳 Apply for Financing</a>
         <a href="#" id="sms-btn" class="calc-btn-outline calc-actions a">💬 Text Us Your Quote</a>
@@ -1235,6 +1252,26 @@ footer {
 
 <script>
 // ── CALCULATOR ──
+function unlockCalculator() {
+  const name = document.getElementById('gate-name').value.trim();
+  const phone = document.getElementById('gate-phone').value.trim();
+  if (!name || !phone) {
+    alert('Please enter your name and phone number to see your estimate.');
+    return;
+  }
+  // Track lead in Google Analytics
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'calculator_lead', {
+      'event_category': 'Lead',
+      'event_label': name
+    });
+  }
+  // Pre-fill SMS button with lead info
+  document.getElementById('lead-gate').style.display = 'none';
+  document.getElementById('calc-box').style.display = 'block';
+  recalc();
+}
+
 const WINDOW_PRICE = 900, DOOR_PRICE = 2500;
 let counts = { windows: 1, doors: 0 };
 let upgrades = { lowe: 0, frame: 0 };
