@@ -863,6 +863,7 @@ footer {
       <p style="color:rgba(255,255,255,0.75); font-size:15px;">Tell us what you need and we'll reach out to schedule your free in-home estimate.</p>
     </div>
 
+    <div id="appointment-form-wrap">
     <form name="appointment-request" netlify netlify-honeypot="bot-field" style="display:grid; gap:14px;">
       <input type="hidden" name="form-name" value="appointment-request">
       <input type="hidden" name="bot-field" style="display:none;">
@@ -875,21 +876,21 @@ footer {
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
-        <label id="appt-windows-label" onclick="toggleService('windows')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
+        <div id="appt-windows-label" onclick="toggleService('windows')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
           <input type="checkbox" name="service_windows" id="appt-windows" style="display:none;">
           <div style="font-size:22px; margin-bottom:4px;">🪟</div>
           <div style="color:#fff; font-weight:600; font-size:14px;">Windows</div>
-        </label>
-        <label id="appt-doors-label" onclick="toggleService('doors')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
+        </div>
+        <div id="appt-doors-label" onclick="toggleService('doors')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
           <input type="checkbox" name="service_doors" id="appt-doors" style="display:none;">
           <div style="font-size:22px; margin-bottom:4px;">🚪</div>
           <div style="color:#fff; font-weight:600; font-size:14px;">Doors</div>
-        </label>
-        <label id="appt-both-label" onclick="toggleService('both')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
+        </div>
+        <div id="appt-both-label" onclick="toggleService('both')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
           <input type="checkbox" name="service_both" id="appt-both" style="display:none;">
           <div style="font-size:22px; margin-bottom:4px;">🪟🚪</div>
           <div style="color:#fff; font-weight:600; font-size:14px;">Both</div>
-        </label>
+        </div>
       </div>
 
       <div id="appt-counts" style="display:none; gap:14px; grid-template-columns:1fr 1fr;">
@@ -913,10 +914,11 @@ footer {
         </div>
       </div>
 
-      <button type="submit" style="background:var(--orange); border:none; border-radius:6px; color:#fff; padding:16px; font-size:16px; font-weight:700; cursor:pointer; width:100%; transition:background 0.2s; margin-top:4px;">
+      <button type="button" onclick="submitAppointment()" style="background:var(--orange); border:none; border-radius:6px; color:#fff; padding:16px; font-size:16px; font-weight:700; cursor:pointer; width:100%; transition:background 0.2s; margin-top:4px;">
         Request My Free Estimate →
       </button>
     </form>
+    </div>
 
     <p style="text-align:center; font-size:11px; color:rgba(255,255,255,0.4); margin-top:12px;">Your information is never shared or sold. We'll reach out once to schedule your appointment — no spam, no pressure.</p>
   </div>
@@ -933,7 +935,7 @@ function toggleService(type) {
   const cb = document.getElementById('appt-' + type);
   if (apptServices[type]) {
     label.style.border = '2px solid #fff';
-    label.style.background = 'rgba(255,255,255,0.25)';
+    label.style.background = 'rgba(255,255,255,0.3)';
     cb.checked = true;
   } else {
     label.style.border = '2px solid rgba(255,255,255,0.25)';
@@ -947,20 +949,60 @@ function updateCountBoxes() {
   const showWindows = apptServices.windows || apptServices.both;
   const showDoors = apptServices.doors || apptServices.both;
   const showAny = showWindows || showDoors;
-
   const countsDiv = document.getElementById('appt-counts');
   countsDiv.style.display = showAny ? 'grid' : 'none';
-
-  const winBox = document.getElementById('window-count-box');
-  const doorBox = document.getElementById('door-count-box');
-  winBox.style.display = showWindows ? 'block' : 'none';
-  doorBox.style.display = showDoors ? 'block' : 'none';
+  document.getElementById('window-count-box').style.display = showWindows ? 'block' : 'none';
+  document.getElementById('door-count-box').style.display = showDoors ? 'block' : 'none';
 }
 
 function adjustAppt(type, delta) {
   apptCounts[type] = Math.max(1, apptCounts[type] + delta);
   document.getElementById('appt-' + type + '-num').textContent = apptCounts[type];
   document.getElementById('appt-' + type + '-count-val').value = apptCounts[type];
+}
+
+function submitAppointment() {
+  const name = document.querySelector('input[name="name"]').value.trim();
+  const phone = document.querySelector('input[name="phone"]').value.trim();
+  const hasService = apptServices.windows || apptServices.doors || apptServices.both;
+
+  if (!name || !phone) {
+    alert('Please enter your name and phone number.');
+    return;
+  }
+  if (!hasService) {
+    alert('Please select Windows, Doors, or Both.');
+    return;
+  }
+
+  // Build service summary
+  let services = [];
+  if (apptServices.windows) services.push('Windows (' + apptCounts.window + ')');
+  if (apptServices.doors) services.push('Doors (' + apptCounts.door + ')');
+  if (apptServices.both) services.push('Windows (' + apptCounts.window + ') & Doors (' + apptCounts.door + ')');
+
+  const formData = new FormData();
+  formData.append('form-name', 'appointment-request');
+  formData.append('name', name);
+  formData.append('phone', phone);
+  formData.append('services', services.join(', '));
+  formData.append('window_count', apptCounts.window);
+  formData.append('door_count', apptCounts.door);
+
+  fetch('/', { method: 'POST', body: formData })
+    .then(() => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'appointment_request', { 'event_category': 'Lead', 'event_label': name });
+      }
+      // Show success message
+      document.getElementById('appointment-form-wrap').innerHTML = `
+        <div style="text-align:center; padding:32px 0;">
+          <div style="font-size:48px; margin-bottom:16px;">✅</div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; letter-spacing:1px; margin-bottom:8px;">Request Received!</div>
+          <p style="color:rgba(255,255,255,0.75); font-size:15px;">Thanks ${name}! We'll reach out to schedule your free estimate.</p>
+        </div>`;
+    })
+    .catch(() => alert('Something went wrong. Please call us at (816) 547-3207.'));
 }
 </script>
 <div style="background:var(--charcoal); padding: 0 24px;">
