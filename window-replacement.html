@@ -4,8 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Window Replacement in Kansas City | KO Carpentry</title>
-<meta name="description" content="Professional window replacement in the Kansas City area. KO Carpentry installs Alliance Hawthorne replacement windows with 15+ years of hands-on installation experience. Free quotes.">
+<meta name="description" content="Professional window replacement in the Kansas City area. KO Carpentry installs Alliance Hawthorne replacement windows with 15+ years of hands-on experience. Free quotes.">
 <link rel="canonical" href="https://kocarpentry-kc.com/window-replacement">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1S1HYBWFG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V1S1HYBWFG');
+</script>
 
 <script type="application/ld+json">
 {
@@ -23,136 +34,169 @@
 </script>
 
 <style>
-  :root {
-    --deep-green: #1c3328;
-    --mid-green: #2d4a3a;
-    --accent-green: #4a7c5c;
-    --cream: #f4f1ea;
-    --text-dark: #1a1a18;
-    --warm-gray: #6b6a63;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: Georgia, 'Times New Roman', serif;
-    color: var(--text-dark);
-    background: var(--cream);
-    line-height: 1.6;
-  }
-  header.hero {
-    background: linear-gradient(160deg, var(--deep-green), var(--mid-green));
-    color: var(--cream);
-    padding: 4rem 1.5rem 3.5rem;
-    text-align: left;
-  }
-  .hero-inner { max-width: 800px; margin: 0 auto; }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.8rem;
-    color: var(--accent-green);
-    font-family: Arial, sans-serif;
-    margin-bottom: 1rem;
-  }
-  h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    line-height: 1.15;
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-  .hero p.sub {
-    font-size: 1.1rem;
-    color: #d8ddd6;
-    max-width: 560px;
-  }
-  .cta-btn {
-    display: inline-block;
-    margin-top: 1.75rem;
-    background: var(--cream);
-    color: var(--deep-green);
-    font-family: Arial, sans-serif;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 0.9rem 1.8rem;
-    border-radius: 3px;
-    font-size: 0.95rem;
-  }
-  main { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--deep-green);
-    margin: 2.5rem 0 1rem;
-    border-bottom: 2px solid var(--accent-green);
-    padding-bottom: 0.4rem;
-  }
-  p { margin-bottom: 1rem; color: var(--text-dark); }
-  ul { margin: 0 0 1.5rem 1.2rem; }
-  li { margin-bottom: 0.5rem; }
-  .signal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.2rem;
-    margin: 1.5rem 0 2rem;
-  }
-  .signal {
-    background: white;
-    border-left: 4px solid var(--accent-green);
-    padding: 1rem 1.2rem;
-    font-family: Arial, sans-serif;
-  }
-  .signal strong { display: block; color: var(--deep-green); font-family: Georgia, serif; font-size: 1.05rem; margin-bottom: 0.25rem; }
-  .signal span { font-size: 0.9rem; color: var(--warm-gray); }
-  footer.closer {
-    background: var(--deep-green);
-    color: var(--cream);
-    text-align: center;
-    padding: 3rem 1.5rem;
-  }
-  footer.closer h2 { color: var(--cream); border-color: var(--accent-green); display: inline-block; }
-  footer.closer p { color: #cdd4cc; max-width: 480px; margin: 0 auto 1.5rem; }
+:root {
+  --olive: #4a5e3a;
+  --olive-dark: #3a4e2e;
+  --olive-light: #5a7048;
+  --charcoal: #1e1e1e;
+  --charcoal-mid: #2a2a2a;
+  --charcoal-light: #333;
+  --cream: #f5f0e8;
+  --cream-dark: #ede8de;
+  --orange: #e07b39;
+  --orange-dark: #c96a28;
+  --text-dark: #1a1a1a;
+  --text-mid: #444;
+  --text-light: #777;
+  --white: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(30,30,30,0.97);
+  backdrop-filter: blur(8px);
+  z-index: 900; padding: 0 24px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 2px solid var(--olive);
+}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--white); letter-spacing: 2px; }
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { color: #ccc; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--orange) !important; color: var(--white) !important; padding: 8px 18px; border-radius: 4px; }
+.nav-cta:hover { background: var(--orange-dark) !important; }
+@media(max-width:768px) { .nav-links { display: none; } }
+
+.page-hero {
+  background: var(--charcoal);
+  padding: 140px 24px 72px;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(74,94,58,0.15) 0%, transparent 50%);
+}
+.page-hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+.hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
+.page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 72px); line-height: 0.98; color: var(--white); letter-spacing: 1px; margin-bottom: 20px; }
+.page-hero .sub { font-family: 'Lora', serif; font-size: clamp(16px, 2vw, 19px); color: #aaa; max-width: 560px; line-height: 1.7; margin-bottom: 36px; }
+.btn-primary { background: var(--orange); color: var(--white); padding: 15px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 15px; display: inline-block; transition: background 0.2s; }
+.btn-primary:hover { background: var(--orange-dark); }
+
+main { max-width: 800px; margin: 0 auto; padding: 64px 24px; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 38px); letter-spacing: 0.5px; color: var(--charcoal); margin: 40px 0 16px; }
+p { font-family: 'Lora', serif; font-size: 16px; color: var(--text-mid); line-height: 1.75; margin-bottom: 16px; }
+ul { margin: 0 0 24px 20px; }
+li { font-family: 'Lora', serif; font-size: 16px; color: var(--text-mid); line-height: 1.7; margin-bottom: 10px; }
+a.inline-link { color: var(--olive); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--olive); }
+
+.signal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0 32px; }
+.signal { background: var(--white); border: 1px solid #ddd; border-left: 4px solid var(--olive); border-radius: 4px; padding: 20px 22px; }
+.signal strong { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 19px; letter-spacing: 0.3px; color: var(--charcoal); margin-bottom: 6px; }
+.signal span { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: var(--text-light); }
+
+.cta-section { background: var(--olive); text-align: center; padding: 72px 24px; }
+.cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 50px); color: #fff; letter-spacing: 1px; margin-bottom: 14px; }
+.cta-section p { font-family: 'Lora', serif; color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 30px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cta-btns a { padding: 15px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 15px; display: inline-block; transition: 0.2s; }
+.cta-btn-white { background: #fff; color: var(--olive-dark); }
+.cta-btn-white:hover { background: var(--cream); }
+.cta-btn-ghost { border: 2px solid rgba(255,255,255,0.4); color: #fff; }
+.cta-btn-ghost:hover { border-color: #fff; }
+
+footer { background: #141414; padding: 56px 24px 28px; border-top: 2px solid var(--olive); }
+.footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: var(--white); margin-bottom: 16px; }
+.footer-logo span { color: var(--orange); }
+.footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.footer-links a { color: #888; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom p { color: #444; font-size: 12px; }
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow">Kansas City Metro · Bates City, MO</p>
+<nav>
+  <a href="/" class="nav-logo">KO <span>Carpentry</span></a>
+  <div class="nav-links">
+    <a href="/#services">Services</a>
+    <a href="/#products">Products</a>
+    <a href="/#process">Process</a>
+    <a href="/#reviews">Reviews</a>
+    <a href="/#faq">FAQ</a>
+    <a href="tel:+18165473207" class="nav-cta">📞 Call Now</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Kansas City Metro · Bates City, MO</div>
     <h1>Window Replacement That's Built to Last, Priced Fair</h1>
-    <p class="sub">Old windows drafty, foggy, or painted shut? KO Carpentry replaces them with Alliance Hawthorne windows &mdash; installed by hand, one job at a time, by someone who's been doing this for 15+ years.</p>
-    <a href="/#quote" class="cta-btn">Get a Free Quote</a>
+    <p class="sub">Old windows drafty, foggy, or painted shut? KO Carpentry replaces them with Alliance Hawthorne windows — installed by hand, one job at a time, by someone who's been doing this for 15+ years.</p>
+    <a href="/#calculator" class="btn-primary">Get a Free Quote</a>
   </div>
 </header>
 
 <main>
+  <div class="section-label">The Job</div>
   <h2>What Window Replacement Actually Involves</h2>
-  <p>Window replacement isn't the same job as new construction. Your existing frame and siding stay put &mdash; the old sash and hardware come out, and a new insert window goes into the existing opening. Done right, it's a clean process: no drywall damage, no siding repair, and most homes get done in a single day for a handful of windows.</p>
-  <p>KO Carpentry installs Alliance Hawthorne replacement windows &mdash; a solid, energy-efficient option that holds up in Missouri's swing between humid summers and cold winters. Every install includes proper flashing, insulation around the frame, and sealing to stop the air leaks that drove up your heating and cooling bills in the first place.</p>
+  <p>Window replacement isn't the same job as new construction. Your existing frame and siding stay put — the old sash and hardware come out, and a new insert window goes into the existing opening. Done right, it's a clean process: no drywall damage, no siding repair, and most homes get done in a single day for a handful of windows.</p>
+  <p>KO Carpentry installs Alliance Hawthorne replacement windows — a solid, energy-efficient option that holds up in Missouri's swing between humid summers and cold winters. Every install includes proper flashing, insulation around the frame, and sealing to stop the air leaks that drove up your heating and cooling bills in the first place.</p>
 
+  <div class="section-label">Warning Signs</div>
   <h2>Signs It's Time to Replace</h2>
   <div class="signal-grid">
-    <div class="signal"><strong>Drafts &amp; cold spots</strong><span>Air moving around the frame even when closed</span></div>
-    <div class="signal"><strong>Fogging between panes</strong><span>Seal failure &mdash; the glass unit itself is done</span></div>
+    <div class="signal"><strong>Drafts & cold spots</strong><span>Air moving around the frame even when closed</span></div>
+    <div class="signal"><strong>Fogging between panes</strong><span>Seal failure — the glass unit itself is done</span></div>
     <div class="signal"><strong>Stuck or painted shut</strong><span>Frames warped or swollen from moisture</span></div>
-    <div class="signal"><strong>High energy bills</strong><span>Single-pane or worn-out glass losing you money monthly</span></div>
+    <div class="signal"><strong>High energy bills</strong><span>Old glass losing you money every month</span></div>
   </div>
 
-  <h2>Why Homeowners Choose KO Carpentry</h2>
-  <p>I run this business solo, which means the person who quotes your job is the same person who shows up and installs it &mdash; no sales rep, no rotating crew. That keeps overhead low, and that savings goes straight into a lower price for you rather than into a company van fleet or a call center.</p>
+  <div class="section-label">Why KO Carpentry</div>
+  <h2>Built Around Direct Work, Not Overhead</h2>
+  <p>I run this business solo, which means the person who quotes your job is the same person who shows up and installs it — no sales rep, no rotating crew. That keeps overhead low, and that savings goes straight into a lower price for you rather than into a company van fleet or a call center.</p>
   <ul>
     <li>15+ years of hands-on window and door installation experience</li>
-    <li>Alliance Hawthorne windows &mdash; a proven, energy-efficient product line</li>
-    <li>Direct communication &mdash; you talk to the installer, not a middleman</li>
+    <li>Alliance Hawthorne windows — a proven, energy-efficient product line</li>
+    <li>Direct communication — you talk to the installer, not a middleman</li>
     <li>Serving Bates City and the greater Kansas City metro, including Lee's Summit, Overland Park, and Olathe</li>
   </ul>
 
+  <div class="section-label">Getting Started</div>
   <h2>What to Expect</h2>
-  <p>Start with a free, no-pressure quote &mdash; I'll come measure, walk through what needs replacing, and give you a real number based on your home, not a generic estimate. From there, most residential window replacement jobs are scheduled within a few weeks and completed in a single day, depending on how many windows are involved.</p>
+  <p>Start with a free, no-pressure quote — I'll come measure, walk through what needs replacing, and give you a real number based on your home, not a generic estimate. Most residential window replacement jobs are scheduled within a few weeks and completed in a single day, depending on how many windows are involved. Looking for new construction instead? Visit our <a href="/window-installation" class="inline-link">window installation</a> page.</p>
 </main>
 
-<footer class="closer">
+<section class="cta-section">
   <h2>Ready to Stop Fighting Your Windows?</h2>
   <p>Get a straightforward, no-obligation quote for your window replacement project.</p>
-  <a href="/#quote" class="cta-btn">Request Your Free Quote</a>
+  <div class="cta-btns">
+    <a href="tel:+18165473207" class="cta-btn-white">📞 Call Us Now</a>
+    <a href="/#calculator" class="cta-btn-ghost">Get a Free Quote</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">KO <span>Carpentry</span></div>
+    <div class="footer-links">
+      <a href="/window-replacement">Window Replacement</a>
+      <a href="/window-installation">Window Installation</a>
+      <a href="/door-installation">Door Installation</a>
+      <a href="/sliding-door-installation">Sliding Doors</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 KO Carpentry LLC. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
 
 </body>
