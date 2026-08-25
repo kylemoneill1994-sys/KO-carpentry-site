@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Door Projects | KO Carpentry</title>
+<meta name="description" content="Real entry and patio door installation projects completed by KO Carpentry across the Kansas City metro.">
+<link rel="canonical" href="https://kocarpentry-kc.com/our-projects-doors">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1S1HYBWFG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V1S1HYBWFG');
+</script>
+
+<style>
+:root {
+  --olive: #4a5e3a; --olive-dark: #3a4e2e; --olive-light: #5a7048;
+  --charcoal: #1e1e1e; --charcoal-mid: #2a2a2a; --charcoal-light: #333;
+  --cream: #f5f0e8; --cream-dark: #ede8de;
+  --orange: #e07b39; --orange-dark: #c96a28;
+  --text-dark: #1a1a1a; --text-mid: #444; --text-light: #777; --white: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(30,30,30,0.97); backdrop-filter: blur(8px); z-index: 900; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--olive); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--white); letter-spacing: 2px; text-decoration: none; }
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { color: #ccc; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+.nav-cta { background: var(--orange) !important; color: var(--white) !important; padding: 8px 18px; border-radius: 4px; }
+.nav-cta:hover { background: var(--orange-dark) !important; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  background: var(--charcoal-mid); border: 1px solid #3a3a3a; border-radius: 6px;
+  padding: 8px; min-width: 140px; display: none; margin-top: 12px;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a { display: block; padding: 8px 12px; border-radius: 4px; text-align: center; }
+.nav-dropdown-menu a:hover { background: var(--olive); color: #fff; }
+@media(max-width:768px) { .nav-links { display: none; } }
+
+.page-hero { background: var(--charcoal); padding: 140px 24px 60px; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(74,94,58,0.15) 0%, transparent 50%); }
+.page-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+.hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+.page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 6.5vw, 64px); line-height: 1.0; color: var(--white); letter-spacing: 1px; margin-bottom: 16px; }
+.page-hero .sub { font-family: 'Lora', serif; font-size: clamp(15px, 1.8vw, 18px); color: #aaa; max-width: 600px; line-height: 1.7; }
+
+.subnav { background: var(--olive-dark); padding: 14px 24px; text-align: center; }
+.subnav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 0 16px; transition: color 0.2s; }
+.subnav a.active, .subnav a:hover { color: #fff; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.gallery-item {
+  position: relative; border-radius: 6px; overflow: hidden; cursor: pointer;
+  aspect-ratio: 4/3; background: #ddd;
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.35s ease;
+}
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
+  color: #fff; padding: 28px 14px 12px;
+  font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+/* Lightbox */
+#lightbox {
+  display: none; position: fixed; inset: 0; background: rgba(20,20,20,0.94);
+  z-index: 2000; align-items: center; justify-content: center; padding: 40px;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 90vw; max-height: 80vh; border-radius: 4px; }
+#lightbox-caption {
+  position: absolute; bottom: 32px; left: 0; right: 0; text-align: center;
+  color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+#lightbox-close {
+  position: absolute; top: 24px; right: 32px; color: #fff; font-size: 32px;
+  background: none; border: none; cursor: pointer; line-height: 1;
+}
+#lightbox-prev, #lightbox-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); border: none; color: #fff;
+  font-size: 28px; width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
+  transition: background 0.2s;
+}
+#lightbox-prev:hover, #lightbox-next:hover { background: rgba(255,255,255,0.25); }
+#lightbox-prev { left: 20px; }
+#lightbox-next { right: 20px; }
+@media(max-width:600px) {
+  #lightbox-prev, #lightbox-next { width: 40px; height: 40px; font-size: 22px; }
+}
+
+.cta-section { background: var(--olive); text-align: center; padding: 64px 24px; }
+.cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4.5vw, 42px); color: #fff; letter-spacing: 1px; margin-bottom: 12px; }
+.cta-section p { font-family: 'Lora', serif; color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 26px; }
+.cta-section a { background: var(--orange); color: #fff; padding: 14px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 15px; display: inline-block; }
+
+footer { background: #141414; padding: 56px 24px 28px; border-top: 2px solid var(--olive); }
+.footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: var(--white); margin-bottom: 16px; }
+.footer-logo span { color: var(--orange); }
+.footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.footer-links a { color: #888; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom p { color: #444; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">KO <span>Carpentry</span></a>
+  <div class="nav-links">
+    <a href="/#services">Services</a>
+    <a href="/#products">Products</a>
+    <div class="nav-dropdown">
+      <a href="/our-projects-doors" class="active">Our Projects ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/our-projects-windows">Windows</a>
+        <a href="/our-projects-doors">Doors</a>
+      </div>
+    </div>
+    <a href="/service-areas">Service Areas</a>
+    <a href="/#faq">FAQ</a>
+    <a href="tel:+18165473207" class="nav-cta">📞 Call Now</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Our Work</div>
+    <h1>Door Projects Across the KC Metro</h1>
+    <p class="sub">A look at real ProVia entry and patio door installs completed for homeowners across the KC metro. Tap any photo for a closer look.</p>
+  </div>
+</header>
+
+<div class="subnav">
+  <a href="/our-projects-windows">Windows</a>
+  <a href="/our-projects-doors" class="active">Doors</a>
+</div>
+
+<main>
+  <div class="gallery-grid" id="gallery">
+    <div class="gallery-item"><img src="/images/projects/doors/door-01-lees-summit-mo.jpg" alt="Door installation in Lee's Summit, MO" loading="lazy"><div class="gallery-caption">Lee's Summit, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-02-lees-summit-mo.jpg" alt="Door installation in Lee's Summit, MO" loading="lazy"><div class="gallery-caption">Lee's Summit, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-03-stilwell-ks.jpg" alt="Door installation in Stilwell, KS" loading="lazy"><div class="gallery-caption">Stilwell, KS</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-04-stilwell-ks.jpg" alt="Door installation in Stilwell, KS" loading="lazy"><div class="gallery-caption">Stilwell, KS</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-05-olathe-ks.jpg" alt="Door installation in Olathe, KS" loading="lazy"><div class="gallery-caption">Olathe, KS</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-06-blue-springs-mo.jpg" alt="Door installation in Blue Springs, MO" loading="lazy"><div class="gallery-caption">Blue Springs, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-07-blue-springs-mo.jpg" alt="Door installation in Blue Springs, MO" loading="lazy"><div class="gallery-caption">Blue Springs, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-08-tonganoxie-ks.jpg" alt="Door installation in Tonganoxie, KS" loading="lazy"><div class="gallery-caption">Tonganoxie, KS</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-09-kansas-city-mo.jpg" alt="Door installation in Kansas City, MO" loading="lazy"><div class="gallery-caption">Kansas City, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-10-kansas-city-mo.jpg" alt="Door installation in Kansas City, MO" loading="lazy"><div class="gallery-caption">Kansas City, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-11-overland-park-ks.jpg" alt="Door installation in Overland Park, KS" loading="lazy"><div class="gallery-caption">Overland Park, KS</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-12-overland-park-ks.jpg" alt="Door installation in Overland Park, KS" loading="lazy"><div class="gallery-caption">Overland Park, KS</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-13-blue-springs-mo.jpg" alt="Door installation in Blue Springs, MO" loading="lazy"><div class="gallery-caption">Blue Springs, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-14-blue-springs-mo.jpg" alt="Door installation in Blue Springs, MO" loading="lazy"><div class="gallery-caption">Blue Springs, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-15-kansas-city-mo.jpg" alt="Door installation in Kansas City, MO" loading="lazy"><div class="gallery-caption">Kansas City, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-16-kansas-city-mo.jpg" alt="Door installation in Kansas City, MO" loading="lazy"><div class="gallery-caption">Kansas City, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-17-columbia-mo.jpg" alt="Door installation in Columbia, MO" loading="lazy"><div class="gallery-caption">Columbia, MO — Before</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-18-columbia-mo.jpg" alt="Door installation in Columbia, MO" loading="lazy"><div class="gallery-caption">Columbia, MO — After</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-19-platte-city-mo.jpg" alt="Door installation in Platte City, MO" loading="lazy"><div class="gallery-caption">Platte City, MO</div></div>
+    <div class="gallery-item"><img src="/images/projects/doors/door-20-platte-city-mo.jpg" alt="Door installation in Platte City, MO" loading="lazy"><div class="gallery-caption">Platte City, MO</div></div>
+  </div>
+</main>
+
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">✕</button>
+  <button id="lightbox-prev" aria-label="Previous">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button id="lightbox-next" aria-label="Next">›</button>
+  <div id="lightbox-caption"></div>
+</div>
+
+<section class="cta-section">
+  <h2>Have a Window Project in Mind?</h2>
+  <p>Get a free, no-obligation quote for your home.</p>
+  <a href="/#calculator">Get a Free Quote</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">KO <span>Carpentry</span></div>
+    <div class="footer-links">
+      <a href="/window-replacement">Window Replacement</a>
+      <a href="/window-installation">Window Installation</a>
+      <a href="/door-installation">Door Installation</a>
+      <a href="/sliding-door-installation">Sliding Doors</a>
+      <a href="/our-projects-windows">Our Projects</a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 KO Carpentry LLC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const items = Array.from(document.querySelectorAll('.gallery-item'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  const img = items[index].querySelector('img');
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCaption.textContent = items[index].querySelector('.gallery-caption').textContent;
+  lightbox.classList.add('open');
+}
+function closeLightbox() { lightbox.classList.remove('open'); }
+function showNext() { openLightbox((currentIndex + 1) % items.length); }
+function showPrev() { openLightbox((currentIndex - 1 + items.length) % items.length); }
+
+items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-next').addEventListener('click', showNext);
+document.getElementById('lightbox-prev').addEventListener('click', showPrev);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') showNext();
+  if (e.key === 'ArrowLeft') showPrev();
+});
+</script>
+
+</body>
+</html>
