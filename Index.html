@@ -76,6 +76,15 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--white); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  background: var(--charcoal-mid); border: 1px solid #3a3a3a; border-radius: 6px;
+  padding: 8px; min-width: 140px; display: none; margin-top: 12px;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a { display: block; padding: 8px 12px; border-radius: 4px; text-align: center; }
+.nav-dropdown-menu a:hover { background: var(--olive); color: #fff; }
 .nav-cta {
   background: var(--orange) !important;
   color: var(--white) !important;
@@ -351,8 +360,13 @@ section { padding: 96px 24px; }
   background: var(--white);
   padding: 36px 32px;
   transition: background 0.2s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .service-card:hover { background: var(--cream-dark); }
+.service-card.no-link { cursor: default; }
 .service-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 52px;
@@ -369,8 +383,8 @@ section { padding: 96px 24px; }
   margin-bottom: 10px;
 }
 .service-desc { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
-.service-link { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--olive); text-decoration: none; border-bottom: 1px solid var(--olive); }
-.service-link:hover { color: var(--olive-dark); }
+.service-link { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--olive); border-bottom: 1px solid var(--olive); }
+.service-card:hover .service-link { color: var(--olive-dark); }
 
 /* ── PRODUCTS ── */
 .products-section { background: var(--charcoal); }
@@ -696,6 +710,14 @@ footer {
     <a href="#services">Services</a>
     <a href="#products">Products</a>
     <a href="#process">Process</a>
+    <div class="nav-dropdown">
+      <a href="/our-projects-windows">Our Projects ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/our-projects-windows">Windows</a>
+        <a href="/our-projects-doors">Doors</a>
+      </div>
+    </div>
+    <a href="/service-areas">Service Areas</a>
     <a href="#appointment">Book Estimate</a>
     <a href="#reviews">Reviews</a>
     <a href="#faq">FAQ</a>
@@ -909,38 +931,32 @@ function submitAppointment() {
     <h2 class="section-title">Our Services</h2>
     <p class="section-sub">From a single window to a whole-home transformation, KO Carpentry delivers with precision and care.</p>
     <div class="services-grid">
-      <div class="service-card">
+      <a href="/window-replacement" class="service-card">
         <div class="service-num">01</div>
         <span class="service-icon">🪟</span>
         <div class="service-title">Window Replacement</div>
         <p class="service-desc">Single-hung, double-hung, casement, bay, and picture windows. We remove the old and install the new with a clean, airtight finish that lasts decades.</p>
-        <a href="/window-replacement" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card">
+        <span class="service-link">Learn more →</span>
+      </a>
+      <a href="/door-installation" class="service-card">
         <div class="service-num">02</div>
         <span class="service-icon">🚪</span>
         <div class="service-title">Entry Door Installation</div>
-        <p class="service-desc">Steel, fiberglass, and wood entry doors installed plumb and level every time. We handle the framing, weatherstripping, hardware, and finishing trim.</p>
-        <a href="/door-installation" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card">
+        <p class="service-desc">Steel, fiberglass, and wood entry doors installed plumb and level every time — including ProVia storm doors for an extra layer of weather protection. We handle the framing, weatherstripping, hardware, and finishing trim.</p>
+        <span class="service-link">Learn more →</span>
+      </a>
+      <a href="/sliding-door-installation" class="service-card">
         <div class="service-num">03</div>
         <span class="service-icon">🌿</span>
         <div class="service-title">Patio & Sliding Doors</div>
         <p class="service-desc">Smooth-gliding, properly sealed patio doors that bring light in and keep drafts out. French doors and sliding systems available in a range of styles.</p>
-        <a href="/sliding-door-installation" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card">
+        <span class="service-link">Learn more →</span>
+      </a>
+      <div class="service-card no-link">
         <div class="service-num">04</div>
         <span class="service-icon">🌡️</span>
         <div class="service-title">Energy-Efficient Upgrades</div>
         <p class="service-desc">Triple-pane glass, low-E coatings, and argon-filled units that cut your heating and cooling bills — and qualify for energy tax credits.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <span class="service-icon">⛈️</span>
-        <div class="service-title">Storm Doors & Windows</div>
-        <p class="service-desc">Add an extra layer of protection against harsh weather. Storm doors and windows installed over your existing units for year-round durability.</p>
       </div>
     </div>
   </div>
