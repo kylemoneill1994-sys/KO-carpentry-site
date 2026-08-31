@@ -92,11 +92,49 @@ nav {
   border-radius: 4px;
 }
 .nav-cta:hover { background: var(--orange-dark) !important; }
-.nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 950; }
 .nav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 @media(max-width:768px) {
-  .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: rgba(30,30,30,0.98);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0 16px;
+    border-bottom: 2px solid var(--olive);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+  .nav-links.mobile-open { display: flex; }
+  .nav-links a {
+    padding: 14px 24px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .nav-links .nav-cta { margin: 8px 24px 0; text-align: center; }
+  .nav-dropdown { width: 100%; }
+  .nav-dropdown > a::after { content: ""; }
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    display: none;
+    background: rgba(255,255,255,0.04);
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+  .nav-dropdown-menu.mobile-open { display: block; }
+  .nav-dropdown-menu a { text-align: left; padding: 12px 24px 12px 40px; border-radius: 0; }
 }
 
 /* ── HERO ── */
@@ -706,13 +744,13 @@ footer {
 <!-- NAV -->
 <nav>
   <div class="nav-logo">KO <span>Carpentry</span></div>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#services">Services</a>
     <a href="#products">Products</a>
     <a href="#process">Process</a>
-    <div class="nav-dropdown">
-      <a href="/our-projects-windows">Our Projects ▾</a>
-      <div class="nav-dropdown-menu">
+    <div class="nav-dropdown" id="projectsDropdown">
+      <a href="/our-projects-windows" id="projectsToggle">Our Projects ▾</a>
+      <div class="nav-dropdown-menu" id="projectsMenu">
         <a href="/our-projects-windows">Windows</a>
         <a href="/our-projects-doors">Doors</a>
       </div>
@@ -723,10 +761,49 @@ footer {
     <a href="#faq">FAQ</a>
     <a href="tel:+18165473207" class="nav-cta">📞 Call Now</a>
   </div>
-  <div class="nav-hamburger" onclick="this.classList.toggle('open')">
+  <div class="nav-hamburger" id="navHamburger">
     <span></span><span></span><span></span>
   </div>
 </nav>
+
+<script>
+(function() {
+  var hamburger = document.getElementById('navHamburger');
+  var navLinks = document.getElementById('navLinks');
+  var projectsToggle = document.getElementById('projectsToggle');
+  var projectsMenu = document.getElementById('projectsMenu');
+  var projectsDropdown = document.getElementById('projectsDropdown');
+
+  function isMobile() { return window.innerWidth <= 768; }
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('mobile-open');
+    // Close the submenu whenever the main menu closes
+    if (!navLinks.classList.contains('mobile-open')) {
+      projectsMenu.classList.remove('mobile-open');
+    }
+  });
+
+  // On mobile, tapping "Our Projects" opens the submenu instead of navigating away
+  projectsToggle.addEventListener('click', function(e) {
+    if (isMobile()) {
+      e.preventDefault();
+      projectsMenu.classList.toggle('mobile-open');
+    }
+  });
+
+  // Tapping a normal link closes the mobile menu
+  var allNavLinks = navLinks.querySelectorAll('a:not(#projectsToggle)');
+  allNavLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('mobile-open');
+      projectsMenu.classList.remove('mobile-open');
+    });
+  });
+})();
+</script>
 
 <!-- HERO -->
 <section class="hero">
