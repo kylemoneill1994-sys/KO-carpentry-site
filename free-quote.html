@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Quote | KO Carpentry LLC | Kansas City Window & Door Replacement</title>
+<meta name="description" content="Get a free, no-obligation window or door replacement quote from KO Carpentry. Fully insured, serving Kansas City. Tell us about your project — we'll get back to you within one business day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1S1HYBWFG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V1S1HYBWFG');
+</script>
+
+<style>
+:root {
+  --olive: #4a5e3a;
+  --olive-dark: #3a4e2e;
+  --olive-light: #5a7048;
+  --charcoal: #1e1e1e;
+  --charcoal-mid: #2a2a2a;
+  --cream: #f5f0e8;
+  --cream-dark: #ede8de;
+  --orange: #e07b39;
+  --orange-dark: #c96a28;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #777;
+  --white: #ffffff;
+  --border: #ddd6c8;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+a { color: inherit; }
+img { max-width: 100%; }
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--charcoal);
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 8px 16px;
+  border-bottom: 2px solid var(--orange);
+}
+.topbar strong { color: var(--orange); }
+
+/* ── NAV ── */
+nav {
+  background: var(--charcoal);
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 10px;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+.nav-logo span { color: var(--orange); }
+.nav-phone {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-phone:hover { color: #fff; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+  padding: 56px 24px 72px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(74,94,58,0.18) 0%, transparent 55%),
+    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(74,94,58,0.03) 40px, rgba(74,94,58,0.03) 80px);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; }
+}
+.hero-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6.4vw, 68px);
+  line-height: 0.98;
+  color: var(--white);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero h1 em { font-style: normal; color: var(--olive-light); display: block; }
+.hero-sub {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  color: #b8b8b8;
+  max-width: 460px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.hero-points { display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px; }
+.hero-point { display: flex; align-items: center; gap: 10px; color: #ddd; font-size: 14px; font-weight: 600; }
+.hero-point .dot {
+  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(90,112,72,0.35); color: var(--olive-light);
+  display: flex; align-items: center; justify-content: center; font-size: 12px;
+}
+.hero-stats {
+  display: flex; gap: 40px; flex-wrap: wrap;
+  margin-top: 36px; padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--white); line-height: 1; }
+.hero-stat-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #888; margin-top: 4px; }
+
+/* ── FORM CARD ── */
+.form-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  position: relative;
+}
+.form-card-head { margin-bottom: 22px; }
+.form-card-head h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  color: var(--charcoal);
+}
+.form-card-head p { font-size: 13.5px; color: var(--text-light); margin-top: 6px; }
+
+.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+@media (max-width: 480px) { .f-row { grid-template-columns: 1fr; } }
+.f-group { margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+.f-group label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--text-mid);
+}
+.f-group label .opt { text-transform: none; font-weight: 400; color: var(--text-light); letter-spacing: 0; }
+.f-group input[type=text],
+.f-group input[type=tel],
+.f-group input[type=email],
+.f-group input[type=number],
+.f-group select,
+.f-group textarea {
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 11px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--text-dark);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+  width: 100%;
+}
+.f-group input:focus, .f-group select:focus, .f-group textarea:focus {
+  border-color: var(--olive);
+  background: var(--white);
+}
+.f-group textarea { resize: vertical; min-height: 72px; }
+.f-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23777' stroke-width='1.6' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 34px; }
+
+.chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  border: 1.5px solid var(--border);
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 9px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.chip input { display: none; }
+.chip.checked {
+  background: var(--olive);
+  border-color: var(--olive);
+  color: #fff;
+}
+
+.f-file {
+  border: 1.5px dashed var(--border);
+  border-radius: 6px;
+  padding: 14px;
+  background: var(--cream);
+  font-size: 13px;
+  color: var(--text-light);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+.f-file:hover { border-color: var(--olive); }
+.f-file input { display: none; }
+#file-name { margin-top: 6px; font-size: 12.5px; color: var(--olive-dark); font-weight: 600; }
+
+.honey { position: absolute; left: -9999px; opacity: 0; height: 0; }
+
+.f-submit {
+  width: 100%;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  margin-top: 4px;
+}
+.f-submit:hover { background: var(--orange-dark); }
+.f-submit:disabled { background: #c9a488; cursor: default; }
+.f-note { font-size: 11.5px; color: var(--text-light); text-align: center; margin-top: 12px; line-height: 1.6; }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 30px 10px;
+}
+.form-success.show { display: block; }
+.form-success .check {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--olive); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin: 0 auto 18px;
+}
+.form-success h3 { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--charcoal); margin-bottom: 8px; letter-spacing: 0.5px; }
+.form-success p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+.form-error {
+  display: none;
+  background: #fdecea; border: 1px solid #f3c2bd; color: #a13a2f;
+  border-radius: 6px; padding: 10px 14px; font-size: 13px; margin-bottom: 14px;
+}
+.form-error.show { display: block; }
+
+/* ── TICKER ── */
+.ticker { background: var(--olive); padding: 11px 0; overflow: hidden; white-space: nowrap; }
+.ticker-inner { display: inline-block; animation: ticker 26s linear infinite; }
+.ticker-inner span { font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.9); padding: 0 28px; }
+.ticker-inner span::before { content: '◆ '; color: rgba(255,255,255,0.45); }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── SECTIONS ── */
+section.block { padding: 72px 24px; }
+.block-inner { max-width: 1100px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(30px, 5vw, 46px); letter-spacing: 0.5px; color: var(--charcoal); line-height: 1; margin-bottom: 14px; }
+.section-title.light { color: var(--white); }
+
+/* Trust grid */
+.trust-section { background: var(--olive-dark); }
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px; }
+.trust-item { display: flex; gap: 14px; align-items: flex-start; }
+.trust-check { width: 30px; height: 30px; flex-shrink: 0; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; }
+.trust-item h3 { font-size: 14.5px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.trust-item p { font-size: 12.5px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* Pricing reference */
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2px; background: var(--border); border: 2px solid var(--border); border-radius: 8px; overflow: hidden; }
+.price-card { background: var(--white); padding: 26px 24px; }
+.price-item { font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 6px; }
+.price-num { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: var(--olive-dark); }
+.price-desc { font-size: 12.5px; color: var(--text-light); margin-top: 4px; }
+
+/* Reviews */
+.reviews-section { background: var(--charcoal); }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.review-card { background: var(--charcoal-mid); border: 1px solid #333; border-radius: 6px; padding: 26px 24px; }
+.review-stars { color: #f5a623; font-size: 16px; letter-spacing: 2px; margin-bottom: 12px; }
+.review-text { font-family: 'Lora', serif; font-size: 14px; font-style: italic; color: #ccc; line-height: 1.7; margin-bottom: 16px; }
+.review-author { font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--olive-light); }
+
+/* Sticky mobile CTA */
+.mobile-cta {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--charcoal); padding: 12px 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  z-index: 500;
+  border-top: 2px solid var(--orange);
+}
+.mobile-cta a {
+  display: block; background: var(--orange); color: #fff; text-align: center;
+  padding: 13px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none;
+}
+@media (max-width: 720px) { .mobile-cta { display: block; } body { padding-bottom: 66px; } }
+
+/* Footer */
+footer { background: #141414; padding: 44px 24px 28px; border-top: 2px solid var(--olive); }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--white); }
+.footer-logo span { color: var(--orange); }
+.footer-inner p { color: #777; font-size: 12.5px; line-height: 1.6; }
+.footer-inner a { color: #888; text-decoration: none; }
+.footer-inner a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="topbar">📞 Prefer to talk? Call <strong>(816) 547-3207</strong> — Mon–Fri 7am–6pm, Sat 8am–4pm</div>
+
+<nav>
+  <div class="nav-logo">KO <span>Carpentry</span></div>
+  <a href="tel:+18165473207" class="nav-phone">📞 (816) 547-3207</a>
+</nav>
+
+<!-- HERO + FORM -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Free, No-Obligation Estimate</div>
+      <h1>Get Your Window & Door<em>Quote Today.</em></h1>
+      <p class="hero-sub">Tell us about your project and we'll follow up with real pricing — no big-box sales pitch, no per-lead middleman. You're talking directly to the crew that does the work.</p>
+      <div class="hero-points">
+        <div class="hero-point"><span class="dot">✓</span> Fully insured for your protection</div>
+        <div class="hero-point"><span class="dot">✓</span> Response within one business day</div>
+        <div class="hero-point"><span class="dot">✓</span> Flat-rate, transparent pricing — no hidden fees</div>
+        <div class="hero-point"><span class="dot">✓</span> Financing available through Acorn Finance</div>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">Installs Completed</div></div>
+        <div><div class="hero-stat-num">15+</div><div class="hero-stat-label">Years Experience</div></div>
+        <div><div class="hero-stat-num">5★</div><div class="hero-stat-label">Average Rating</div></div>
+      </div>
+    </div>
+
+    <div class="form-card" id="quote-form-card">
+      <div id="form-success" class="form-success">
+        <div class="check">✓</div>
+        <h3>Got It — Thanks!</h3>
+        <p>Your request is on its way to Kyle directly. Expect a call or text within one business day to confirm details and schedule your free on-site estimate.</p>
+        <p style="margin-top:14px;">Need it sooner? Call <strong>(816) 547-3207</strong>.</p>
+      </div>
+
+      <form id="quote-form" name="free-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <div class="form-card-head">
+          <h2>Get Your Free Quote</h2>
+          <p>Fill this out and we'll follow up personally — usually same day.</p>
+        </div>
+
+        <div id="form-error" class="form-error">Something went wrong sending your request. Please call or text us at (816) 547-3207 instead.</div>
+
+        <!-- Required for Netlify Forms detection -->
+        <input type="hidden" name="form-name" value="free-quote">
+        <!-- Honeypot (Netlify spam filter) -->
+        <input type="text" name="bot-field" class="honey" tabindex="-1" autocomplete="off">
+
+        <div class="f-row">
+          <div class="f-group">
+            <label for="q-name">Full Name</label>
+            <input type="text" id="q-name" name="Name" required autocomplete="name">
+          </div>
+          <div class="f-group">
+            <label for="q-phone">Phone</label>
+            <input type="tel" id="q-phone" name="Phone" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label for="q-email">Email</label>
+          <input type="email" id="q-email" name="Email" required autocomplete="email">
+        </div>
+
+        <div class="f-row">
+          <div class="f-group">
+            <label for="q-address">Property Address</label>
+            <input type="text" id="q-address" name="Address" placeholder="Street address" required autocomplete="street-address">
+          </div>
+          <div class="f-group">
+            <label for="q-zip">Zip Code</label>
+            <input type="text" id="q-zip" name="Zip Code" inputmode="numeric" pattern="[0-9]{5}" required>
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label>What do you need?</label>
+          <div class="chip-group" id="project-chips">
+            <label class="chip"><input type="checkbox" name="Project Type" value="Window Replacement">Windows</label>
+            <label class="chip"><input type="checkbox" name="Project Type" value="Entry Door">Entry Door</label>
+            <label class="chip"><input type="checkbox" name="Project Type" value="Patio / Sliding Door">Patio / Sliding Door</label>
+            <label class="chip"><input type="checkbox" name="Project Type" value="Storm Door or Window">Storm Door/Window</label>
+            <label class="chip"><input type="checkbox" name="Project Type" value="Not Sure Yet">Not Sure Yet</label>
+          </div>
+        </div>
+
+        <div class="f-row">
+          <div class="f-group">
+            <label for="q-qty">Approx. # of Windows / Doors</label>
+            <select id="q-qty" name="Approx Quantity" required>
+              <option value="">Select one</option>
+              <option>Just 1</option>
+              <option>2–4</option>
+              <option>5–8</option>
+              <option>9–15</option>
+              <option>Whole house (16+)</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label for="q-timeline">Timeline</label>
+            <select id="q-timeline" name="Timeline" required>
+              <option value="">Select one</option>
+              <option>ASAP</option>
+              <option>Within 1 month</option>
+              <option>1–3 months</option>
+              <option>3–6 months</option>
+              <option>Just researching</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label for="q-budget">Estimated Budget <span class="opt">(optional, helps us prep the right options)</span></label>
+          <select id="q-budget" name="Budget Range">
+            <option value="">Prefer not to say</option>
+            <option>Under $1,500</option>
+            <option>$1,500 – $5,000</option>
+            <option>$5,000 – $10,000</option>
+            <option>$10,000 – $20,000</option>
+            <option>$20,000+</option>
+          </select>
+        </div>
+
+        <div class="f-group">
+          <label for="q-notes">Project Details <span class="opt">(optional)</span></label>
+          <textarea id="q-notes" name="Project Details" placeholder="Window sizes, damage, style preferences, anything else that helps us quote accurately."></textarea>
+        </div>
+
+        <div class="f-group">
+          <label for="q-photo">Photos of the Job <span class="opt">(optional, speeds up your quote)</span></label>
+          <label class="f-file" for="q-photo">
+            📷 Tap to add photos
+            <input type="file" id="q-photo" name="attachment" accept="image/*" multiple>
+          </label>
+          <div id="file-name"></div>
+        </div>
+
+        <div class="f-group">
+          <label for="q-contact">Best Way to Reach You</label>
+          <select id="q-contact" name="Preferred Contact">
+            <option>Call</option>
+            <option>Text</option>
+            <option>Email</option>
+          </select>
+        </div>
+
+        <button type="submit" class="f-submit" id="submit-btn">Send My Free Quote Request →</button>
+        <p class="f-note">No obligation. No spam. Your info goes straight to KO Carpentry — never sold to a third party or shared with other contractors.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Window Replacement</span><span>Door Installation</span><span>Energy-Efficient Glass</span><span>Storm Doors</span><span>Patio Doors</span><span>Entry Doors</span><span>Custom Frames</span><span>Weather Sealing</span><span>Kansas City & Surrounding Areas</span><span>Fully Insured</span><span>Free Estimates</span><span>Financing Available</span>
+    <span>Window Replacement</span><span>Door Installation</span><span>Energy-Efficient Glass</span><span>Storm Doors</span><span>Patio Doors</span><span>Entry Doors</span><span>Custom Frames</span><span>Weather Sealing</span><span>Kansas City & Surrounding Areas</span><span>Fully Insured</span><span>Free Estimates</span><span>Financing Available</span>
+  </div>
+</div>
+
+<!-- TRUST -->
+<section class="block trust-section">
+  <div class="block-inner">
+    <div class="section-label" style="color:rgba(255,255,255,0.5);">Why Homeowners Choose KO</div>
+    <h2 class="section-title light" style="margin-bottom:40px;">Straight to the Source</h2>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div><h3>Fully Insured</h3><p>Full liability coverage on every job — your home is protected at every step.</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div><h3>No Lead-Fee Markup</h3><p>You're contacting KO Carpentry directly — not a platform that resells your info to five competing companies.</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div><h3>Transparent, Flat-Rate Pricing</h3><p>What we quote is what you pay. No surprise add-ons, no hidden labor charges.</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div><h3>Lifetime Workmanship Warranty</h3><p>Backed by a lifetime craftsmanship guarantee, on top of the manufacturer's warranty.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING REFERENCE -->
+<section class="block">
+  <div class="block-inner">
+    <div class="section-label">What to Expect</div>
+    <h2 class="section-title">Ballpark Pricing</h2>
+    <p style="font-family:'Lora',serif; font-size:15px; color:var(--text-mid); max-width:520px; margin-bottom:32px; line-height:1.7;">Every home is different, so your exact quote comes after a quick on-site look — but here's a starting point.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-item">Window Replacement</div>
+        <div class="price-num">$900+</div>
+        <div class="price-desc">per window, installed</div>
+      </div>
+      <div class="price-card">
+        <div class="price-item">Entry Door</div>
+        <div class="price-num">$2,500+</div>
+        <div class="price-desc">installed, ProVia</div>
+      </div>
+      <div class="price-card">
+        <div class="price-item">Patio / Sliding Door</div>
+        <div class="price-num">$2,500+</div>
+        <div class="price-desc">installed, ProVia / Alliance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="block reviews-section">
+  <div class="block-inner">
+    <div class="section-label" style="color:var(--orange);">Client Reviews</div>
+    <h2 class="section-title light" style="margin-bottom:32px;">What People Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"KO Carpentry replaced all twelve windows in our colonial. The crew was professional, fast, and left the place spotless. Our heating bill dropped the very next month."</p>
+        <div class="review-author">Margaret & Tom H. — Homeowners</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I got three quotes and KO was the most honest — no upselling, no nonsense. The front door they installed is beautiful and fits perfectly."</p>
+        <div class="review-author">David R. — Homeowner</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The sliding patio door they installed glides like silk. They finished in half a day and caulked everything immaculately."</p>
+        <div class="review-author">Sandra K. — Homeowner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">KO <span>Carpentry</span></div>
+    <p><a href="tel:+18165473207">(816) 547-3207</a> &nbsp;·&nbsp; <a href="mailto:kyle.m.oneill1994@gmail.com">kyle.m.oneill1994@gmail.com</a> &nbsp;·&nbsp; Serving Greater Kansas City</p>
+    <p>Fully Insured</p>
+    <p>© 2026 KO Carpentry LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta"><a href="tel:+18165473207">📞 Call for a Faster Response</a></div>
+
+<script>
+// Chip toggle behavior
+document.querySelectorAll('.chip input[type=checkbox]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    cb.closest('.chip').classList.toggle('checked', cb.checked);
+  });
+});
+
+// File name preview
+const fileInput = document.getElementById('q-photo');
+const fileNameEl = document.getElementById('file-name');
+fileInput.addEventListener('change', () => {
+  if (fileInput.files.length) {
+    fileNameEl.textContent = fileInput.files.length + ' photo(s) selected';
+  } else {
+    fileNameEl.textContent = '';
+  }
+});
+
+// Form submission via Netlify Forms — same pipeline as the main
+// kocarpentry-kc.com site, delivers straight to your inbox via the
+// email notification already configured on that Netlify site.
+// Requires this page to be deployed on Netlify as part of that site
+// (Netlify detects the form at build time from the static markup above).
+
+const form = document.getElementById('quote-form');
+const submitBtn = document.getElementById('submit-btn');
+const errorBox = document.getElementById('form-error');
+const successBox = document.getElementById('form-success');
+const cardHead = document.querySelector('.form-card-head');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errorBox.classList.remove('show');
+
+  // require at least one project type chip
+  const checked = form.querySelectorAll('input[name="Project Type"]:checked');
+  if (checked.length === 0) {
+    errorBox.textContent = 'Please select at least one project type (windows, doors, etc).';
+    errorBox.classList.add('show');
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    // Netlify Forms accepts a normal multipart POST back to the page path —
+    // letting the browser set the multipart boundary itself (no Content-Type
+    // header) is what makes the optional photo upload work.
+    const formData = new FormData(form);
+    const res = await fetch('/', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!res.ok) throw new Error('Request failed');
+
+    form.style.display = 'none';
+    cardHead.style.display = 'none';
+    successBox.classList.add('show');
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', { event_category: 'Quote Form', event_label: 'KO Carpentry Landing Page' });
+    }
+  } catch (err) {
+    errorBox.classList.add('show');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send My Free Quote Request →';
+  }
+});
+</script>
+
+</body>
+</html>
