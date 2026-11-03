@@ -372,7 +372,7 @@ footer { background: #141414; padding: 44px 24px 28px; border-top: 2px solid var
         <p style="margin-top:14px;">Need it sooner? Call <strong>(816) 547-3207</strong>.</p>
       </div>
 
-      <form id="quote-form" name="free-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form id="quote-form" name="free-quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
         <div class="form-card-head">
           <h2>Get Your Free Quote</h2>
           <p>Fill this out and we'll follow up personally — usually same day.</p>
@@ -651,9 +651,22 @@ form.addEventListener('submit', async (e) => {
     cardHead.style.display = 'none';
     successBox.classList.add('show');
 
+    // Send the visitor to /thank-you so Google Ads can count the conversion.
+    // The redirect waits for the analytics event, with a 1.5s fallback.
+    let redirected = false;
+    const goThankYou = () => {
+      if (redirected) return;
+      redirected = true;
+      window.location.href = '/thank-you';
+    };
     if (typeof gtag === 'function') {
-      gtag('event', 'generate_lead', { event_category: 'Quote Form', event_label: 'KO Carpentry Landing Page' });
+      gtag('event', 'generate_lead', {
+        event_category: 'Quote Form',
+        event_label: 'KO Carpentry Landing Page',
+        event_callback: goThankYou
+      });
     }
+    setTimeout(goThankYou, 1500);
   } catch (err) {
     errorBox.classList.add('show');
     submitBtn.disabled = false;

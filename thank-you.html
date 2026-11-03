@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | KO Carpentry LLC</title>
+<meta name="description" content="Thanks for requesting a free quote from KO Carpentry. Kyle will be in touch shortly.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1S1HYBWFG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V1S1HYBWFG');
+</script>
+
+<style>
+:root {
+  --olive: #4a5e3a;
+  --olive-light: #5a7048;
+  --charcoal: #1e1e1e;
+  --cream: #f5f0e8;
+  --orange: #e07b39;
+  --orange-dark: #c96a28;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --white: #ffffff;
+  --border: #ddd6c8;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+a { color: inherit; }
+
+.topbar {
+  background: var(--charcoal); color: #ccc;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+  text-align: center; padding: 8px 16px;
+  border-bottom: 2px solid var(--orange);
+}
+.topbar strong { color: var(--orange); }
+
+nav {
+  background: var(--charcoal); padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 10px;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif; font-size: 26px;
+  color: var(--white); letter-spacing: 2px; text-decoration: none;
+}
+.nav-logo span { color: var(--orange); }
+.nav-phone {
+  color: #ccc; text-decoration: none; font-size: 14px; font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.nav-phone:hover { color: #fff; }
+
+.hero {
+  background: var(--charcoal); padding: 56px 24px 64px; text-align: center;
+  background-image:
+    linear-gradient(135deg, rgba(74,94,58,0.18) 0%, transparent 55%),
+    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(74,94,58,0.03) 40px, rgba(74,94,58,0.03) 80px);
+}
+.check {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--olive); color: var(--white);
+  font-size: 32px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 7vw, 64px); line-height: 1;
+  color: var(--white); letter-spacing: 1px; margin-bottom: 16px;
+}
+.hero p {
+  font-family: 'Lora', serif; font-size: 17px; color: #b8b8b8;
+  max-width: 560px; margin: 0 auto; line-height: 1.7;
+}
+
+main { flex: 1; padding: 48px 24px 56px; }
+.wrap { max-width: 720px; margin: 0 auto; }
+.section-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--olive); margin-bottom: 16px;
+}
+.steps { list-style: none; display: grid; gap: 14px; margin-bottom: 40px; }
+.steps li {
+  background: var(--white); border: 1px solid var(--border); border-radius: 6px;
+  padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start;
+}
+.num {
+  flex: none; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--orange); color: var(--white); font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.steps h2 { font-size: 17px; font-weight: 700; margin-bottom: 2px; }
+.steps p { color: var(--text-mid); font-size: 15px; }
+
+.cta {
+  background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--orange);
+  border-radius: 6px; padding: 22px 20px; margin-bottom: 32px;
+}
+.cta h2 { font-size: 18px; margin-bottom: 6px; }
+.cta p { color: var(--text-mid); font-size: 15px; margin-bottom: 16px; }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 700;
+  padding: 12px 20px; border-radius: 4px; font-size: 15px;
+}
+.btn-primary { background: var(--orange); color: var(--white); }
+.btn-primary:hover { background: var(--orange-dark); }
+.btn-ghost { border: 2px solid var(--olive); color: var(--olive); }
+.btn-ghost:hover { background: var(--olive); color: var(--white); }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 15px; }
+.links a { color: var(--olive); font-weight: 600; }
+
+footer { background: #141414; padding: 36px 24px 28px; border-top: 2px solid var(--olive); }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--white); }
+.footer-logo span { color: var(--orange); }
+.footer-inner p { color: #777; font-size: 12.5px; line-height: 1.6; }
+.footer-inner a { color: #888; text-decoration: none; }
+.footer-inner a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="topbar">📞 Need it sooner? Call <strong>(816) 547-3207</strong></div>
+
+<nav>
+  <a href="/" class="nav-logo">KO <span>Carpentry</span></a>
+  <a href="tel:+18165473207" class="nav-phone">📞 (816) 547-3207</a>
+</nav>
+
+<section class="hero">
+  <div class="check">✓</div>
+  <h1>Got It. Thanks!</h1>
+  <p>Your quote request went straight to Kyle. You'll hear back by call or text within one business day, usually the same day.</p>
+</section>
+
+<main>
+  <div class="wrap">
+    <div class="section-label">What Happens Next</div>
+    <ol class="steps">
+      <li><span class="num">1</span><div><h2>Kyle reviews your request</h2><p>He looks over your project details and any photos you sent.</p></div></li>
+      <li><span class="num">2</span><div><h2>Quick call or text</h2><p>To confirm a few details and set up a time that works for you.</p></div></li>
+      <li><span class="num">3</span><div><h2>Free on-site estimate</h2><p>Exact measurements and a written quote, with no pressure to decide on the spot.</p></div></li>
+    </ol>
+
+    <div class="cta">
+      <h2>Want to speed things up?</h2>
+      <p>Call or text photos of your windows or doors and we can start working on your quote right away.</p>
+      <div class="btns">
+        <a href="tel:+18165473207" class="btn btn-primary">📞 Call (816) 547-3207</a>
+        <a href="sms:+18165473207" class="btn btn-ghost">💬 Text Photos</a>
+      </div>
+    </div>
+
+    <div class="section-label">While You Wait</div>
+    <div class="links">
+      <a href="/our-projects-windows">See our window projects →</a>
+      <a href="/our-projects-doors">See our door projects →</a>
+      <a href="/">Back to home →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">KO <span>Carpentry</span></div>
+    <p><a href="tel:+18165473207">(816) 547-3207</a> &nbsp;·&nbsp; Serving Greater Kansas City</p>
+    <p>Fully Insured</p>
+    <p>© 2026 KO Carpentry LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
