@@ -76,6 +76,15 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--white); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  background: var(--charcoal-mid); border: 1px solid #3a3a3a; border-radius: 6px;
+  padding: 8px; min-width: 140px; display: none; margin-top: 12px;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a { display: block; padding: 8px 12px; border-radius: 4px; text-align: center; }
+.nav-dropdown-menu a:hover { background: var(--olive); color: #fff; }
 .nav-cta {
   background: var(--orange) !important;
   color: var(--white) !important;
@@ -83,11 +92,49 @@ nav {
   border-radius: 4px;
 }
 .nav-cta:hover { background: var(--orange-dark) !important; }
-.nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 950; }
 .nav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: 0.3s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 @media(max-width:768px) {
-  .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: rgba(30,30,30,0.98);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0 16px;
+    border-bottom: 2px solid var(--olive);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+  .nav-links.mobile-open { display: flex; }
+  .nav-links a {
+    padding: 14px 24px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .nav-links .nav-cta { margin: 8px 24px 0; text-align: center; }
+  .nav-dropdown { width: 100%; }
+  .nav-dropdown > a::after { content: ""; }
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    display: none;
+    background: rgba(255,255,255,0.04);
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+  .nav-dropdown-menu.mobile-open { display: block; }
+  .nav-dropdown-menu a { text-align: left; padding: 12px 24px 12px 40px; border-radius: 0; }
 }
 
 /* ── HERO ── */
@@ -351,8 +398,13 @@ section { padding: 96px 24px; }
   background: var(--white);
   padding: 36px 32px;
   transition: background 0.2s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .service-card:hover { background: var(--cream-dark); }
+.service-card.no-link { cursor: default; }
 .service-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 52px;
@@ -369,6 +421,8 @@ section { padding: 96px 24px; }
   margin-bottom: 10px;
 }
 .service-desc { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+.service-link { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--olive); border-bottom: 1px solid var(--olive); }
+.service-card:hover .service-link { color: var(--olive-dark); }
 
 /* ── PRODUCTS ── */
 .products-section { background: var(--charcoal); }
@@ -547,26 +601,209 @@ footer {
   transition: color 0.2s;
 }
 .footer-review-link:hover { color: var(--orange); }
-
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "KO Carpentry LLC",
+  "image": "https://kocarpentry-kc.com/logo.png",
+  "url": "https://kocarpentry-kc.com",
+  "telephone": "+18165473207",
+  "email": "Kyle.m.oneill1994@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kansas City",
+    "addressRegion": "MO",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Kansas City, MO"},
+    {"@type": "City", "name": "Overland Park, KS"},
+    {"@type": "City", "name": "Lee's Summit, MO"},
+    {"@type": "City", "name": "Blue Springs, MO"},
+    {"@type": "City", "name": "Independence, MO"},
+    {"@type": "City", "name": "Olathe, KS"}
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "16:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "7"
+  },
+  "description": "Expert window and door replacement in Kansas City. Licensed and insured. Free quotes. Alliance Hawthorne windows, ProVia doors. Financing available.",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Window Replacement"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Entry Door Installation"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Patio Door Installation"
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does window replacement cost in Kansas City?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Window replacement with KO Carpentry typically starts around $900 per window, installed. The final price depends on window size, style, and any upgrades like triple-pane glass or custom frame colors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a new entry or patio door cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Doors typically start around $2,500 installed, depending on the door style, material, and any glass or hardware upgrades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does installation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Window replacement typically takes 2-4 weeks from order to install, while doors usually take 3-6 weeks depending on customization options chosen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer financing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, KO Carpentry offers financing through Acorn Finance with no impact to your credit score to get pre-qualified."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KO Carpentry serves Kansas City and the entire surrounding metro area, including Overland Park, Lee's Summit, Blue Springs, Independence, and Olathe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed and insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, KO Carpentry LLC is fully insured and carries full liability insurance."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xs1bhovclb");
+</script>
+
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">KO <span>Carpentry</span></div>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#services">Services</a>
     <a href="#products">Products</a>
     <a href="#process">Process</a>
+    <div class="nav-dropdown" id="projectsDropdown">
+      <a href="/our-projects-windows" id="projectsToggle">Our Projects ▾</a>
+      <div class="nav-dropdown-menu" id="projectsMenu">
+        <a href="/our-projects-windows">Windows</a>
+        <a href="/our-projects-doors">Doors</a>
+      </div>
+    </div>
+    <a href="/service-areas">Service Areas</a>
+    <a href="#appointment">Book Estimate</a>
     <a href="#reviews">Reviews</a>
     <a href="#faq">FAQ</a>
     <a href="tel:+18165473207" class="nav-cta">📞 Call Now</a>
   </div>
-  <div class="nav-hamburger" onclick="this.classList.toggle('open')">
+  <div class="nav-hamburger" id="navHamburger">
     <span></span><span></span><span></span>
   </div>
 </nav>
+
+<script>
+(function() {
+  var hamburger = document.getElementById('navHamburger');
+  var navLinks = document.getElementById('navLinks');
+  var projectsToggle = document.getElementById('projectsToggle');
+  var projectsMenu = document.getElementById('projectsMenu');
+  var projectsDropdown = document.getElementById('projectsDropdown');
+
+  function isMobile() { return window.innerWidth <= 768; }
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('mobile-open');
+    // Close the submenu whenever the main menu closes
+    if (!navLinks.classList.contains('mobile-open')) {
+      projectsMenu.classList.remove('mobile-open');
+    }
+  });
+
+  // On mobile, tapping "Our Projects" opens the submenu instead of navigating away
+  projectsToggle.addEventListener('click', function(e) {
+    if (isMobile()) {
+      e.preventDefault();
+      projectsMenu.classList.toggle('mobile-open');
+    }
+  });
+
+  // Tapping a normal link closes the mobile menu
+  var allNavLinks = navLinks.querySelectorAll('a:not(#projectsToggle)');
+  allNavLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('mobile-open');
+      projectsMenu.classList.remove('mobile-open');
+    });
+  });
+})();
+</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -576,7 +813,7 @@ footer {
     <h1>Built to Last,<em>Made to Impress.</em></h1>
     <p class="hero-sub">Expert window and door replacement that transforms your home — sealed, secure, and stunning.</p>
     <div class="hero-btns">
-      <a href="#calculator" class="btn-primary">Get a Free Quote</a>
+      <a href="#appointment" class="btn-primary">Request a Free Estimate</a>
       <a href="tel:+18165473207" class="btn-secondary">📞 (816) 547-3207</a>
     </div>
     <div class="hero-stats">
@@ -604,7 +841,157 @@ footer {
   </div>
 </div>
 
-<!-- FINANCING BANNER -->
+<!-- APPOINTMENT REQUEST -->
+<div id="appointment" style="background:var(--olive); padding: 48px 24px;">
+  <div style="max-width:800px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:28px;">
+      <div style="font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:8px;">Free Consultation</div>
+      <h2 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(32px,5vw,48px); color:#fff; letter-spacing:1px; margin-bottom:8px;">Request an Appointment</h2>
+      <p style="color:rgba(255,255,255,0.75); font-size:15px;">Tell us what you need and we'll reach out to schedule your free in-home estimate.</p>
+    </div>
+
+    <div id="appointment-form-wrap">
+    <form name="appointment-request" netlify netlify-honeypot="bot-field" style="display:grid; gap:14px;">
+      <input type="hidden" name="form-name" value="appointment-request">
+      <input type="hidden" name="bot-field" style="display:none;">
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <input type="text" name="name" placeholder="Your Name *" required
+          style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:6px; color:#fff; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
+        <input type="tel" name="phone" placeholder="Phone Number *" required
+          style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:6px; color:#fff; padding:13px 16px; font-size:15px; outline:none; width:100%; box-sizing:border-box;">
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+        <div id="appt-windows-label" onclick="toggleService('windows')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
+          <input type="checkbox" name="service_windows" id="appt-windows" style="display:none;">
+          <div style="font-size:22px; margin-bottom:4px;">🪟</div>
+          <div style="color:#fff; font-weight:600; font-size:14px;">Windows</div>
+        </div>
+        <div id="appt-doors-label" onclick="toggleService('doors')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
+          <input type="checkbox" name="service_doors" id="appt-doors" style="display:none;">
+          <div style="font-size:22px; margin-bottom:4px;">🚪</div>
+          <div style="color:#fff; font-weight:600; font-size:14px;">Doors</div>
+        </div>
+        <div id="appt-both-label" onclick="toggleService('both')" style="background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; text-align:center; cursor:pointer; transition:0.2s; user-select:none;">
+          <input type="checkbox" name="service_both" id="appt-both" style="display:none;">
+          <div style="font-size:22px; margin-bottom:4px;">🪟🚪</div>
+          <div style="color:#fff; font-weight:600; font-size:14px;">Both</div>
+        </div>
+      </div>
+
+      <div id="appt-counts" style="display:none; gap:14px; grid-template-columns:1fr 1fr;">
+        <div id="window-count-box" style="display:none; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; align-items:center; justify-content:space-between;">
+          <span style="color:#fff; font-size:14px; font-weight:600;">🪟 Number of Windows</span>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
+            <button type="button" onclick="adjustAppt('window',-1)" style="width:32px;height:32px;background:rgba(255,255,255,0.2);border:none;border-radius:4px;color:#fff;font-size:20px;cursor:pointer;">−</button>
+            <span id="appt-window-num" style="color:#fff;font-size:18px;font-weight:700;min-width:24px;text-align:center;">1</span>
+            <button type="button" onclick="adjustAppt('window',1)" style="width:32px;height:32px;background:rgba(255,255,255,0.2);border:none;border-radius:4px;color:#fff;font-size:20px;cursor:pointer;">+</button>
+          </div>
+          <input type="hidden" name="window_count" id="appt-window-count-val" value="1">
+        </div>
+        <div id="door-count-box" style="display:none; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:14px; align-items:center; justify-content:space-between;">
+          <span style="color:#fff; font-size:14px; font-weight:600;">🚪 Number of Doors</span>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
+            <button type="button" onclick="adjustAppt('door',-1)" style="width:32px;height:32px;background:rgba(255,255,255,0.2);border:none;border-radius:4px;color:#fff;font-size:20px;cursor:pointer;">−</button>
+            <span id="appt-door-num" style="color:#fff;font-size:18px;font-weight:700;min-width:24px;text-align:center;">1</span>
+            <button type="button" onclick="adjustAppt('door',1)" style="width:32px;height:32px;background:rgba(255,255,255,0.2);border:none;border-radius:4px;color:#fff;font-size:20px;cursor:pointer;">+</button>
+          </div>
+          <input type="hidden" name="door_count" id="appt-door-count-val" value="1">
+        </div>
+      </div>
+
+      <button type="button" onclick="submitAppointment()" style="background:var(--orange); border:none; border-radius:6px; color:#fff; padding:16px; font-size:16px; font-weight:700; cursor:pointer; width:100%; transition:background 0.2s; margin-top:4px;">
+        Request My Free Estimate →
+      </button>
+    </form>
+    </div>
+
+    <p style="text-align:center; font-size:11px; color:rgba(255,255,255,0.4); margin-top:12px;">Your information is never shared or sold. We'll reach out once to schedule your appointment — no spam, no pressure.</p>
+  </div>
+</div>
+
+<script>
+// ── APPOINTMENT FORM ──
+let apptServices = { windows: false, doors: false, both: false };
+let apptCounts = { window: 1, door: 1 };
+
+function toggleService(type) {
+  apptServices[type] = !apptServices[type];
+  const label = document.getElementById('appt-' + type + '-label');
+  const cb = document.getElementById('appt-' + type);
+  if (apptServices[type]) {
+    label.style.border = '2px solid #fff';
+    label.style.background = 'rgba(255,255,255,0.3)';
+    cb.checked = true;
+  } else {
+    label.style.border = '2px solid rgba(255,255,255,0.25)';
+    label.style.background = 'rgba(255,255,255,0.12)';
+    cb.checked = false;
+  }
+  updateCountBoxes();
+}
+
+function updateCountBoxes() {
+  const showWindows = apptServices.windows || apptServices.both;
+  const showDoors = apptServices.doors || apptServices.both;
+  const showAny = showWindows || showDoors;
+  const countsDiv = document.getElementById('appt-counts');
+  countsDiv.style.display = showAny ? 'grid' : 'none';
+  document.getElementById('window-count-box').style.display = showWindows ? 'block' : 'none';
+  document.getElementById('door-count-box').style.display = showDoors ? 'block' : 'none';
+}
+
+function adjustAppt(type, delta) {
+  apptCounts[type] = Math.max(1, apptCounts[type] + delta);
+  document.getElementById('appt-' + type + '-num').textContent = apptCounts[type];
+  document.getElementById('appt-' + type + '-count-val').value = apptCounts[type];
+}
+
+function submitAppointment() {
+  const name = document.querySelector('input[name="name"]').value.trim();
+  const phone = document.querySelector('input[name="phone"]').value.trim();
+  const hasService = apptServices.windows || apptServices.doors || apptServices.both;
+
+  if (!name || !phone) {
+    alert('Please enter your name and phone number.');
+    return;
+  }
+  if (!hasService) {
+    alert('Please select Windows, Doors, or Both.');
+    return;
+  }
+
+  // Build service summary
+  let services = [];
+  if (apptServices.windows) services.push('Windows (' + apptCounts.window + ')');
+  if (apptServices.doors) services.push('Doors (' + apptCounts.door + ')');
+  if (apptServices.both) services.push('Windows (' + apptCounts.window + ') & Doors (' + apptCounts.door + ')');
+
+  const formData = new FormData();
+  formData.append('form-name', 'appointment-request');
+  formData.append('name', name);
+  formData.append('phone', phone);
+  formData.append('services', services.join(', '));
+  formData.append('window_count', apptCounts.window);
+  formData.append('door_count', apptCounts.door);
+
+  fetch('/', { method: 'POST', body: formData })
+    .then(() => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'appointment_request', { 'event_category': 'Lead', 'event_label': name });
+      }
+      // Show success message
+      document.getElementById('appointment-form-wrap').innerHTML = `
+        <div style="text-align:center; padding:32px 0;">
+          <div style="font-size:48px; margin-bottom:16px;">✅</div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; letter-spacing:1px; margin-bottom:8px;">Request Received!</div>
+          <p style="color:rgba(255,255,255,0.75); font-size:15px;">Thanks ${name}! We'll reach out to schedule your free estimate.</p>
+        </div>`;
+    })
+    .catch(() => alert('Something went wrong. Please call us at (816) 547-3207.'));
+}
+</script>
 <div style="background:var(--charcoal); padding: 0 24px;">
   <div style="max-width:1100px; margin:0 auto;">
     <div class="financing-banner">
@@ -614,61 +1001,6 @@ footer {
   </div>
 </div>
 
-<!-- CALCULATOR -->
-<section class="calc-section" id="calculator">
-  <div class="section-inner">
-    <div class="section-label">Instant Estimate</div>
-    <h2 class="section-title light">Get an Instant Quote</h2>
-    <p class="section-sub light">Build your estimate in seconds. All final quotes are confirmed on-site and include labour, materials, and cleanup.</p>
-    <div class="calc-box">
-      <div class="calc-row">
-        <div>
-          <div class="calc-label">🪟 Window Replacement</div>
-          <div class="calc-price">$900 each (installed)</div>
-        </div>
-        <div class="calc-counter">
-          <button onclick="adjust('windows',-1)">−</button>
-          <span id="windows-count">1</span>
-          <button onclick="adjust('windows',1)">+</button>
-        </div>
-      </div>
-      <div class="calc-row">
-        <div>
-          <div class="calc-label">🚪 Sliding / Patio Door</div>
-          <div class="calc-price">$2,500 each (installed)</div>
-        </div>
-        <div class="calc-counter">
-          <button onclick="adjust('doors',-1)">−</button>
-          <span id="doors-count">0</span>
-          <button onclick="adjust('doors',1)">+</button>
-        </div>
-      </div>
-      <div class="upgrades-title">Optional Upgrades</div>
-      <div class="upgrade-item" onclick="toggleUpgrade('lowe', 150)">
-        <input type="checkbox" id="lowe">
-        <label for="lowe">Low-E / Triple Pane Glass <span style="color:#666;">+$150 per window</span></label>
-      </div>
-      <div class="upgrade-item" onclick="toggleUpgrade('frame', 200)">
-        <input type="checkbox" id="frame">
-        <label for="frame">Custom Frame Colour <span style="color:#666;">+$200 per unit</span></label>
-      </div>
-      <div class="calc-total-area">
-        <div>
-          <div class="calc-total-label">Estimated Total</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;">incl. labour & cleanup</div>
-        </div>
-        <div class="calc-total-num" id="calc-total">$900</div>
-      </div>
-      <p class="calc-disclaimer">* Estimate only. Final price confirmed after on-site assessment.</p>
-      <div class="calc-actions">
-        <a href="https://www.acornfinance.com" target="_blank" rel="noopener" class="calc-btn-orange calc-actions a">💳 Apply for Financing</a>
-        <a href="#" id="sms-btn" class="calc-btn-outline calc-actions a">💬 Text Us Your Quote</a>
-        <a href="tel:+18165473207" class="calc-btn-outline calc-actions a">📞 Call</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SERVICES -->
 <section id="services">
   <div class="section-inner">
@@ -676,35 +1008,32 @@ footer {
     <h2 class="section-title">Our Services</h2>
     <p class="section-sub">From a single window to a whole-home transformation, KO Carpentry delivers with precision and care.</p>
     <div class="services-grid">
-      <div class="service-card">
+      <a href="/window-replacement" class="service-card">
         <div class="service-num">01</div>
         <span class="service-icon">🪟</span>
         <div class="service-title">Window Replacement</div>
         <p class="service-desc">Single-hung, double-hung, casement, bay, and picture windows. We remove the old and install the new with a clean, airtight finish that lasts decades.</p>
-      </div>
-      <div class="service-card">
+        <span class="service-link">Learn more →</span>
+      </a>
+      <a href="/door-installation" class="service-card">
         <div class="service-num">02</div>
         <span class="service-icon">🚪</span>
         <div class="service-title">Entry Door Installation</div>
-        <p class="service-desc">Steel, fiberglass, and wood entry doors installed plumb and level every time. We handle the framing, weatherstripping, hardware, and finishing trim.</p>
-      </div>
-      <div class="service-card">
+        <p class="service-desc">Steel, fiberglass, and wood entry doors installed plumb and level every time — including ProVia storm doors for an extra layer of weather protection. We handle the framing, weatherstripping, hardware, and finishing trim.</p>
+        <span class="service-link">Learn more →</span>
+      </a>
+      <a href="/sliding-door-installation" class="service-card">
         <div class="service-num">03</div>
         <span class="service-icon">🌿</span>
         <div class="service-title">Patio & Sliding Doors</div>
         <p class="service-desc">Smooth-gliding, properly sealed patio doors that bring light in and keep drafts out. French doors and sliding systems available in a range of styles.</p>
-      </div>
-      <div class="service-card">
+        <span class="service-link">Learn more →</span>
+      </a>
+      <div class="service-card no-link">
         <div class="service-num">04</div>
         <span class="service-icon">🌡️</span>
         <div class="service-title">Energy-Efficient Upgrades</div>
         <p class="service-desc">Triple-pane glass, low-E coatings, and argon-filled units that cut your heating and cooling bills — and qualify for energy tax credits.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <span class="service-icon">⛈️</span>
-        <div class="service-title">Storm Doors & Windows</div>
-        <p class="service-desc">Add an extra layer of protection against harsh weather. Storm doors and windows installed over your existing units for year-round durability.</p>
       </div>
     </div>
   </div>
@@ -762,7 +1091,7 @@ footer {
       <div class="trust-item">
         <div class="trust-check">✓</div>
         <div>
-          <h3>Licensed & Fully Insured</h3>
+          <h3>Fully Insured</h3>
           <p>Your home is protected at every step. We carry full liability insurance and all required trade licenses.</p>
         </div>
       </div>
@@ -898,7 +1227,7 @@ footer {
 
       <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
         <summary style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.5px; color:var(--charcoal); cursor:pointer;">Are you licensed and insured?</summary>
-        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Yes, KO Carpentry LLC is fully licensed (Lic. # KO-2024-9821) and carries full liability insurance, so your home is protected throughout the entire installation process.</p>
+        <p style="margin-top:12px; font-size:14px; color:var(--text-mid); line-height:1.7;">Yes, KO Carpentry LLC is fully insured and carries full liability insurance, so your home is protected throughout the entire installation process.</p>
       </details>
 
       <details style="background:var(--white); border:1px solid #ddd; border-radius:6px; padding:18px 22px;">
@@ -942,17 +1271,17 @@ footer {
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Window Replacement</a></li>
-          <li><a href="#services">Entry Doors</a></li>
-          <li><a href="#services">Patio Doors</a></li>
-          <li><a href="#services">Storm Doors</a></li>
-          <li><a href="#services">Energy Upgrades</a></li>
+          <li><a href="/window-replacement">Window Replacement</a></li>
+          <li><a href="/window-installation">Window Installation</a></li>
+          <li><a href="/door-installation">Door Installation</a></li>
+          <li><a href="/sliding-door-installation">Sliding Doors</a></li>
+          <li><a href="#services">All Services</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#calculator">Free Quote</a></li>
+          <li><a href="#appointment">Free Estimate</a></li>
           <li><a href="#process">Our Process</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#products">Products</a></li>
@@ -961,7 +1290,7 @@ footer {
       <div class="footer-col">
         <h4>Hours</h4>
         <p>Mon–Fri: 7am – 6pm<br>Saturday: 8am – 4pm<br>Sunday: Closed</p>
-        <p style="margin-top:16px;color:#555;">Licensed & Insured<br>Lic. # KO-2024-9821</p>
+        <p style="margin-top:16px;color:#555;">Fully Insured</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -970,39 +1299,6 @@ footer {
     </div>
   </div>
 </footer>
-
-<script>
-// ── CALCULATOR ──
-const WINDOW_PRICE = 900, DOOR_PRICE = 2500;
-let counts = { windows: 1, doors: 0 };
-let upgrades = { lowe: 0, frame: 0 };
-
-function adjust(type, delta) {
-  counts[type] = Math.max(0, counts[type] + delta);
-  if (type === 'windows' && counts[type] === 0 && counts.doors === 0) counts[type] = 1;
-  document.getElementById(type + '-count').textContent = counts[type];
-  recalc();
-}
-
-function toggleUpgrade(id, perUnit) {
-  const cb = document.getElementById(id);
-  upgrades[id] = cb.checked ? perUnit : 0;
-  recalc();
-}
-
-function recalc() {
-  const base = counts.windows * WINDOW_PRICE + counts.doors * DOOR_PRICE;
-  const loweAdd = upgrades.lowe * counts.windows;
-  const frameAdd = upgrades.frame * (counts.windows + counts.doors);
-  const total = base + loweAdd + frameAdd;
-  document.getElementById('calc-total').textContent = '$' + total.toLocaleString();
-  const msg = `Hi! I used your quote calculator and got an estimate of $${total.toLocaleString()} (${counts.windows} window(s), ${counts.doors} door(s)). Can you confirm and schedule a free on-site quote?`;
-  document.getElementById('sms-btn').href = 'sms:+18165473207?body=' + encodeURIComponent(msg);
-}
-
-recalc();
-
-</script>
 
 </body>
 </html>
