@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Quote | KO Carpentry LLC | Kansas City Window & Door Replacement</title>
-<meta name="description" content="Get a free, no-obligation window or door replacement quote from KO Carpentry. Fully insured, serving Kansas City. Tell us about your project — we'll get back to you within one business day.">
+<meta name="description" content="Get a free, no-obligation window or door replacement quote from KO Carpentry. Fully insured, serving Kansas City. Tell us about your project — we'll get back to you within an hour during business hours.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -96,9 +96,34 @@ nav {
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    linear-gradient(135deg, rgba(74,94,58,0.18) 0%, transparent 55%),
-    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(74,94,58,0.03) 40px, rgba(74,94,58,0.03) 80px);
+    linear-gradient(90deg, rgba(20,20,20,0.90) 0%, rgba(20,20,20,0.72) 50%, rgba(20,20,20,0.50) 100%),
+    url('/images/projects/windows/IMG_0162.jpeg') center 40% / cover no-repeat;
 }
+@media (max-width: 860px) {
+  .hero-bg { background: linear-gradient(180deg, rgba(20,20,20,0.82) 0%, rgba(20,20,20,0.92) 60%), url('/images/projects/windows/IMG_0162.jpeg') center 30% / cover no-repeat; }
+}
+.rating-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px; padding: 7px 16px 7px 12px; margin-bottom: 22px;
+  color: #fff; font-size: 14px; font-weight: 700; letter-spacing: 0.3px;
+}
+.rating-badge .g { width: 22px; height: 22px; border-radius: 50%; background: #fff; color: #4285F4; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+.rating-badge .stars { color: #f5b301; letter-spacing: 1px; }
+.rating-badge .muted { color: #bbb; font-weight: 600; }
+/* Before & after */
+.ba-section { background: var(--cream); }
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+@media (max-width: 760px) { .ba-grid { grid-template-columns: 1fr; } }
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ba-pair figure { margin: 0; position: relative; border-radius: 6px; overflow: hidden; background: var(--charcoal); }
+.ba-pair img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.ba-pair .tag { position: absolute; top: 10px; left: 10px; background: var(--charcoal); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 9px; border-radius: 3px; }
+.ba-pair .tag.after { background: var(--olive); }
+.ba-caption { font-size: 14px; font-weight: 600; color: var(--text-mid); margin-top: 10px; }
+.ba-cta { margin-top: 32px; }
+.ba-cta a { display: inline-block; background: var(--orange); color: #fff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 4px; }
+.ba-cta a:hover { background: var(--orange-dark); }
 .hero-inner {
   position: relative; z-index: 2;
   max-width: 1100px; margin: 0 auto;
@@ -123,7 +148,7 @@ nav {
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
-.hero h1 em { font-style: normal; color: var(--olive-light); display: block; }
+.hero h1 em { font-style: normal; color: #9dbb7c; display: block; }
 .hero-sub {
   font-family: 'Lora', serif;
   font-size: 17px;
@@ -139,6 +164,10 @@ nav {
   background: rgba(90,112,72,0.35); color: var(--olive-light);
   display: flex; align-items: center; justify-content: center; font-size: 12px;
 }
+.owner-card { display: flex; align-items: center; gap: 14px; margin-top: 26px; padding: 14px 18px 14px 14px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; max-width: 460px; }
+.owner-card img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #9dbb7c; flex-shrink: 0; }
+.owner-card strong { display: block; color: #fff; font-size: 15px; }
+.owner-card span { color: #c8c8c8; font-size: 13.5px; line-height: 1.45; }
 .hero-stats {
   display: flex; gap: 40px; flex-wrap: wrap;
   margin-top: 36px; padding-top: 28px;
@@ -348,15 +377,17 @@ footer { background: #141414; padding: 44px 24px 28px; border-top: 2px solid var
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div>
+      <div class="rating-badge"><span class="g">G</span><span class="stars">★★★★★</span> 5.0 <span class="muted">on Google</span></div>
       <div class="hero-eyebrow">Free, No-Obligation Estimate</div>
       <h1>Get Your Window & Door<em>Quote Today.</em></h1>
-      <p class="hero-sub">Tell us about your project and we'll follow up with real pricing — no big-box sales pitch, no per-lead middleman. You're talking directly to the crew that does the work.</p>
+      <p class="hero-sub">Tell us about your project and we'll follow up with real pricing — no big-box sales pitch, no per-lead middleman. You're talking directly to the person who does the work.</p>
       <div class="hero-points">
         <div class="hero-point"><span class="dot">✓</span> Fully insured for your protection</div>
-        <div class="hero-point"><span class="dot">✓</span> Response within one business day</div>
+        <div class="hero-point"><span class="dot">✓</span> Reply within 1 hour during business hours</div>
         <div class="hero-point"><span class="dot">✓</span> Flat-rate, transparent pricing — no hidden fees</div>
         <div class="hero-point"><span class="dot">✓</span> Financing available through Acorn Finance</div>
       </div>
+      <div class="owner-card"><img src="/images/kyle-owner.jpg" alt="Kyle, owner of KO Carpentry" width="64" height="64"><div><strong>You'll be talking to Kyle</strong><span>Owner and installer. The person who quotes your job is the one who installs it.</span></div></div>
       <div class="hero-stats">
         <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">Installs Completed</div></div>
         <div><div class="hero-stat-num">15+</div><div class="hero-stat-label">Years Experience</div></div>
@@ -368,14 +399,14 @@ footer { background: #141414; padding: 44px 24px 28px; border-top: 2px solid var
       <div id="form-success" class="form-success">
         <div class="check">✓</div>
         <h3>Got It — Thanks!</h3>
-        <p>Your request is on its way to Kyle directly. Expect a call or text within one business day to confirm details and schedule your free on-site estimate.</p>
+        <p>Your request is on its way to Kyle directly. Expect a call or text within an hour during business hours to confirm details and schedule your free on-site estimate.</p>
         <p style="margin-top:14px;">Need it sooner? Call <strong>(816) 547-3207</strong>.</p>
       </div>
 
       <form id="quote-form" name="free-quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
         <div class="form-card-head">
           <h2>Get Your Free Quote</h2>
-          <p>Fill this out and we'll follow up personally — usually same day.</p>
+          <p>Fill this out and we'll follow up personally, usually within the hour.</p>
         </div>
 
         <div id="form-error" class="form-error">Something went wrong sending your request. Please call or text us at (816) 547-3207 instead.</div>
@@ -498,6 +529,19 @@ footer { background: #141414; padding: 44px 24px 28px; border-top: 2px solid var
     <span>Window Replacement</span><span>Door Installation</span><span>Energy-Efficient Glass</span><span>Storm Doors</span><span>Patio Doors</span><span>Entry Doors</span><span>Custom Frames</span><span>Weather Sealing</span><span>Kansas City & Surrounding Areas</span><span>Fully Insured</span><span>Free Estimates</span><span>Financing Available</span>
   </div>
 </div>
+
+<!-- BEFORE & AFTER -->
+<section class="block ba-section">
+  <div class="block-inner">
+    <div class="section-label">Real Jobs</div>
+    <h2 class="section-title" style="margin-bottom:28px;">Before &amp; After</h2>
+    <div class="ba-grid">
+      <div><div class="ba-pair"><figure><span class="tag">Before</span><img src="/images/projects/windows/IMG_0161.jpeg" alt="Fogged windows with failed seals before replacement" loading="lazy" width="1050" height="1400"></figure><figure><span class="tag after">After</span><img src="/images/projects/windows/IMG_0162.jpeg" alt="New replacement windows installed by KO Carpentry" loading="lazy" width="1050" height="1400"></figure></div><p class="ba-caption">Window replacement: fogged, failed glass out, new windows in</p></div>
+      <div><div class="ba-pair"><figure><span class="tag">Before</span><img src="/images/projects/doors/IMG_0158.jpeg" alt="Rotted sliding patio door before replacement" loading="lazy" width="1050" height="1400"></figure><figure><span class="tag after">After</span><img src="/images/projects/doors/IMG_0159.jpeg" alt="New sliding patio door installed by KO Carpentry" loading="lazy" width="1050" height="1400"></figure></div><p class="ba-caption">Sliding door: rotted frame out, new patio door in</p></div>
+    </div>
+    <div class="ba-cta"><a href="#quote-form-card">Get My Free Quote &uarr;</a></div>
+  </div>
+</section>
 
 <!-- TRUST -->
 <section class="block trust-section">
