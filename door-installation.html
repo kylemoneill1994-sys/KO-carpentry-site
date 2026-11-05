@@ -94,6 +94,17 @@ footer { background: #141414; padding: 56px 24px 28px; border-top: 2px solid var
 .footer-links a { color: #888; font-size: 13px; text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--white); }
 .footer-bottom p { color: #444; font-size: 12px; }
+a.inline-link { color: var(--olive); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--olive); }
+/* Job photos */
+.job-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0 8px; }
+.job-photos figure { margin: 0; position: relative; border-radius: 6px; overflow: hidden; background: var(--charcoal); }
+.job-photos img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.job-photos figcaption { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: var(--text-light); padding: 8px 2px 0; background: var(--cream); }
+.job-photos .tag { position: absolute; top: 12px; left: 12px; background: var(--charcoal); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; }
+.job-photos .tag.after { background: var(--olive); }
+.job-photos-note { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: var(--text-light); margin: 6px 0 24px; }
+@media (max-width: 520px) { .job-photos { gap: 8px; } .job-photos .tag { top: 8px; left: 8px; font-size: 10px; padding: 4px 8px; } }
+.job-photos.single { grid-template-columns: 1fr; max-width: 520px; }
 </style>
 </head>
 <body>
@@ -124,6 +135,12 @@ footer { background: #141414; padding: 56px 24px 28px; border-top: 2px solid var
   <h2>Why Door Installation Is Easy to Get Wrong</h2>
   <p>A door installation is only as good as the frame it's set in. Out-of-square openings, poor shimming, or skipped flashing are why so many "new" doors still let in drafts, stick in humid weather, or need adjustment within a year. It's precision carpentry work, not a quick swap — and it shows in how the door performs for the next 15 years, not just how it looks on install day.</p>
   <p>KO Carpentry installs ProVia entry doors, known for solid construction and weather performance. Every install includes proper leveling, shimming, sill pan flashing, and sealing around the frame so the door operates smoothly and keeps weather out.</p>
+
+  <div class="section-label">Recent Work</div>
+  <div class="job-photos single">
+    <figure><img src="/images/projects/doors/entry-door-provia.jpg" alt="New ProVia fiberglass entry door with sidelites installed by KO Carpentry" loading="lazy" width="1050" height="1400"><figcaption>ProVia entry door with matching sidelites, trimmed out under the existing transom</figcaption></figure>
+  </div>
+  <p class="job-photos-note">A recent ProVia entry door install by KO Carpentry. <a href="/our-projects-doors" class="inline-link">See more door projects</a></p>
 
   <div class="section-label">Warning Signs</div>
   <h2>Signs Your Entry Door Needs Replacing</h2>

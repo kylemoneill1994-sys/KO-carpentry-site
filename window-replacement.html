@@ -119,6 +119,15 @@ footer { background: #141414; padding: 56px 24px 28px; border-top: 2px solid var
 .footer-links a { color: #888; font-size: 13px; text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--white); }
 .footer-bottom p { color: #444; font-size: 12px; }
+/* Job photos */
+.job-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0 8px; }
+.job-photos figure { margin: 0; position: relative; border-radius: 6px; overflow: hidden; background: var(--charcoal); }
+.job-photos img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.job-photos figcaption { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: var(--text-light); padding: 8px 2px 0; background: var(--cream); }
+.job-photos .tag { position: absolute; top: 12px; left: 12px; background: var(--charcoal); color: #fff; font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; }
+.job-photos .tag.after { background: var(--olive); }
+.job-photos-note { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: var(--text-light); margin: 6px 0 24px; }
+@media (max-width: 520px) { .job-photos { gap: 8px; } .job-photos .tag { top: 8px; left: 8px; font-size: 10px; padding: 4px 8px; } }
 </style>
 </head>
 <body>
@@ -149,6 +158,13 @@ footer { background: #141414; padding: 56px 24px 28px; border-top: 2px solid var
   <h2>What Window Replacement Actually Involves</h2>
   <p>Window replacement isn't the same job as new construction. Your existing frame and siding stay put — the old sash and hardware come out, and a new insert window goes into the existing opening. Done right, it's a clean process: no drywall damage, no siding repair, and most homes get done in a single day for a handful of windows.</p>
   <p>KO Carpentry installs Alliance Hawthorne replacement windows — a solid, energy-efficient option that holds up in Missouri's swing between humid summers and cold winters. Every install includes proper flashing, insulation around the frame, and sealing to stop the air leaks that drove up your heating and cooling bills in the first place.</p>
+
+  <div class="section-label">Before &amp; After</div>
+  <div class="job-photos">
+    <figure><span class="tag">Before</span><img src="/images/projects/windows/window-replacement-before.jpg" alt="Old windows with failed seals and fogged glass before replacement" loading="lazy" width="1050" height="1400"><figcaption>Before: failed seals, cloudy and streaked glass</figcaption></figure>
+    <figure><span class="tag after">After</span><img src="/images/projects/windows/window-replacement-after.jpg" alt="New replacement windows installed by KO Carpentry" loading="lazy" width="1050" height="1400"><figcaption>After: new windows, clear glass, clean trim</figcaption></figure>
+  </div>
+  <p class="job-photos-note">Same windows on a second-story wall. The fogged units came out and new replacement windows went into the existing openings. <a href="/our-projects-windows" class="inline-link">See more window projects</a></p>
 
   <div class="section-label">Warning Signs</div>
   <h2>Signs It's Time to Replace</h2>
